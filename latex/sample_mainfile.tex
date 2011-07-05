@@ -1,0 +1,47 @@
+\input{doctools/latex/notes_template.tex} 	%Page setup
+\input{doctools/latex/mycommands.tex}		%Some useful commands
+\externaldocument[AH-]{analog_howto} %For external references
+
+\newlength{\pad}
+\setlength{\pad}{.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Set graphic search path
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\graphicspath{{ext_input/},{bwith_select/}}
+
+\begin{document}
+\doublespacing %set double spacing
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}	%First page does not need headers and footers
+\begin{center}
+	{\huge Analog functions howto}\\
+	\today
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{toc}
+\tableofcontents
+\clearpage
+\pagestyle{normal}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Current revisions
+%
+%Current revisions of the boards along with part and kit numbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{current_revs}
+
+
+
+
+\bibliography{latex/ecrefs}
+\end{document}

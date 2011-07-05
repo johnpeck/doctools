@@ -1,0 +1,27 @@
+% The \paramheight and \numheight commands need to be declared elsewhere
+\setlength{\paramheight}{1cm}
+\settoheight{\numheight}{\hbox{0}}
+
+\begin{tabular}{|c|c|c|c|} \hline
+    Parameter   &Value  &Command    &Description\\
+    \hhline{====}
+    \multirow{13}{*}{\texttt{j}} % Adjust the number of rows param to line up j <grumble>
+    &\mbox{\rule[-0.5\paramheight+0.5\numheight]{0cm}{\paramheight}0}   
+                        &reset      &\wksentry{5cm}{Erase any existing configuration and
+                                                    return the slot to a default state
+                                                    defined by the \texttt{k} parameter.}\\
+    \hhline{|~|---}
+    &\parbox[c][\paramheight][c]{1em}{1} 
+                        &hold       &\wksentry{5cm}{Hold the final potential from the
+                                                    previous slot for a duration set by
+                                                    the \texttt{k} parameter.}\\
+    \hhline{|~|---}
+    &2                  &ramp       &\wksentry{5cm}{Ramp between two potentials set by
+                                                    the \texttt{k} parameter at a rate
+                                                    set by the \texttt{ramprt} command.}\\
+    \hhline{|~|---}
+    &3                  &goto       &\wksentry{5cm}{Go to the slot set by the \texttt{k}
+                                                    parameter.  This can be used to create
+                                                    an infinite loop.}\\
+    \hline
+\end{tabular}

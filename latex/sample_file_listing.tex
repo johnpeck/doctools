@@ -1,0 +1,22 @@
+\begin{center}
+	\vspace{-\baselineskip}
+	\begin{tabular}{|l|} \hline
+		\rowcolor[gray]{0.9}
+		\begin{minipage}[c]{\textwidth - 2\tabcolsep}
+			\textbf{File:} 
+			/usr/portage/dev-embedded/avrdude/avrdude-5.5.ebuild
+		\end{minipage}\\	
+	...\\
+	src\_unpack() \{ 	\\
+        unpack \${A}	\\
+        cd "\${S}"		\\
+        \# let the build system re-generate these, bug \#120194	\\
+        rm -f lexer.c config\_gram.c config\_gram.h	\\
+        epatch 
+		/usr/portage/dev-embedded/
+		avrdude/avrdude\_conf\_55\_support\_usb162\_usb82.diff	\\
+	\}	\\
+	...\\
+	\hline
+	\end{tabular}	
+\end{center}

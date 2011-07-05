@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Units
+%
+% Most of these should be used in math mode even with the \ensuremath
+% command.  This makes spacing to the next word correct.
+%
+% Add an entry to showunits.tex when adding one here.  Run latex on
+% showunits.tex to see the output of these commands.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% nV per root Hz
+\newcommand{\vnoiseunits}{\ensuremath{%
+    {\frac{\mathrm{nV}}{\sqrt{\mathrm{Hz}}}}}}
+
+% pA per root Hz
+\newcommand{\cnoiseunits}{\frac{\mathrm{pA}}{\sqrt{\mathrm{Hz}}}}
+
+% kilo ohm (kilohm is the correct spelling)
+\newcommand{\kohm}{\mathrm{k}\Omega}
+
+% mega ohm
+\newcommand{\megohm}{\mathrm{M}\Omega}
+
+% micro volts rms
+\newcommand{\uvrms}{\ensuremath{\mathrm{\mu V_{rms}}}}
+
+% volts rms
+\newcommand{\vrms}{\ensuremath{\mathrm{V_{rms}}}}
+
+% offset drift in uV/deg C
+\newcommand{\uvdegc}{\ensuremath{\mathrm{\mu V / \celsius}}}
+
+% thermal resistance in deg C / watt
+\newcommand{\degcw}{\ensuremath{\mathrm{\celsius / W}}}
+
+% volts
+\newcommand{\volt}{\ensuremath{\mathrm{V}}}
+
+% millivolt
+\newcommand{\mvolt}{\ensuremath{\mathrm{mV}}}
+
+% microvolt
+\newcommand{\uvolt}{\ensuremath{\mu \mathrm{V}}}
+
+% microamp
+\newcommand{\uamp}{\ensuremath{\mu \mathrm{A}}}

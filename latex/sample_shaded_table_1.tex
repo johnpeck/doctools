@@ -1,0 +1,37 @@
+%vm_adc_cal_table
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Range					&Filter				&Slope	&Offset\\
+\hline \hline
+
+%2V range sections
+\multirow{3}{*}{$\pm$2V}		&none				&		&\\  
+\hhline{~---}
+						&10Hz				&		&\\
+\hhline{~---}
+						&10kHz (anti-alias)	&		&\\
+\hline \hline				
+
+%5V range sections
+\multirow{3}{*}{$\pm$5V}		&none				&		&\\  
+\hhline{~---}
+						&10Hz				&		&\\
+\hhline{~---}	
+						&10kHz (anti-alias)	&		&\\
+\hline \hline
+
+%15V range sections
+\multirow{3}{*}{$\pm$15V}		&none		&\cellcolor[gray]{.8}	&\cellcolor[gray]{.8}\\  
+\hhline{~---}
+						&10Hz				&\cellcolor[gray]{.8}	&\cellcolor[gray]{.8}\\
+\hhline{~---}
+						&10kHz (anti-alias)	&\cellcolor[gray]{.8}	&\cellcolor[gray]{.8}\\
+\hline
+
+
+\end{tabular}
+\caption{Calibration table for the E ADC.\label{vm_adc_cal_table}}
+\end{center}
+\end{table}

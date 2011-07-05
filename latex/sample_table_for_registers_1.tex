@@ -1,0 +1,113 @@
+\begin{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Define the longtable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{longtable}{cccccc >{\scriptsize}p{3cm}}
+%\begin{longtable}{>{\scriptsize}p{3cm} >{\scriptsize}p{6cm} >{\scriptsize}p{4cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm}}
+%\begin{longtable}{>{\scriptsize}p{7cm} c c c c}
+\begin{longtable}{|c|l|}
+%\hline
+\multicolumn{2}{c}{Internal voltmeter shift register field descriptions}\\
+\hline
+
+\bf Field
+&\multicolumn{1}{|c|}{\bf Description}	\\ \hline		
+\endfirsthead%now we're done defining the firt table heading
+
+%\hline
+\multicolumn{2}{c}{\small \sl Continued from previous page}\\
+\hline
+
+\bf Field
+&\multicolumn{1}{|c|}{\bf Description}	\\ \hline
+\endhead%now we're done defining the table heading on everything but the first page
+
+\hline
+\multicolumn{2}{c}{\small \sl Continued on next page}\\
+%\hline
+\endfoot%now we're done defining the foot of tables right before a page break
+\hline
+\caption{Internal voltmeter shift register field descriptions \label{vm_config_reg_table}}\\
+\endlastfoot%now we're done defining the last foot of the table
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Start the table data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+15
+&\begin{minipage}{15cm}
+\vspace{.2cm}{\bf Rotator BNC}\vspace{.5cm}\\
+\begin{tabular}{ll}
+1 (0x1)	&\parbox{12cm}{Enable rotator BNC}\vspace{.5cm}\\
+0 (0x0)	&\parbox{12cm}{(Default) Disable rotator BNC}\vspace{.5cm}\\
+\end{tabular}
+\end{minipage}\\ \hline
+
+14
+&\begin{minipage}{15cm}
+\vspace{.2cm}{\bf CE monitor BNC}\vspace{.5cm}\\
+\begin{tabular}{ll}
+1 (0x1)	&\parbox{12cm}{Enable CE monitor BNC}\vspace{.5cm}\\
+0 (0x0)	&\parbox{12cm}{(Default) Disable CE monitor BNC}\vspace{.5cm}\\
+\end{tabular}
+\end{minipage}\\ \hline
+
+13
+&\begin{minipage}{15cm}
+\vspace{.2cm}{\bf Front and rear panel I/V BNCs}\vspace{.5cm}\\
+\begin{tabular}{ll}
+1 (0x1)	&\parbox{12cm}{Enable I/V output BNCs}\vspace{.5cm}\\
+0 (0x0)	&\parbox{12cm}{(Default) Disable I/V output BNCs}\vspace{.5cm}\\
+\end{tabular}
+\end{minipage}\\ \hline
+
+12:9	
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf Fieldcal} -- mask with \texttt{0xe1ff}}\vspace{.5cm}\\
+\begin{tabular}{ll}
+1001 (0x9)	&\parbox{12cm}{Calibrate front or rear panel E BNC \scriptsize (Must also choose the front or rear panel BNC with fields 8:6 below, select fieldcal mode for E ADC filter, and apply 0/10V differential reference to main voltmeter in buddy box)}\vspace{.5cm}\\
+1000 (0x8)	&\parbox{12cm}{Apply +2.5V to E ADC \scriptsize (Must also select fieldcal mode for E ADC filter)}\vspace{.5cm}\\
+1001 (0x9)	&\parbox{12cm}{Apply 0V to E ADC \scriptsize (Must also select fieldcal mode for E ADC filter and leave BNCs in their default mode)}\vspace{.5cm}\\
+1011 (0xb)	&\parbox{12cm}{Trim main voltmeter common-mode rejection \scriptsize (Must also apply 10V common-mode in buddy box, set E ADC gain for 2V range with 10Hz filter, and adjust main voltmeter trim pot)}\vspace{.5cm}\\
+1111 (0xf)	&\parbox{12cm}{Trim zra voltmeter common-mode rejection \scriptsize (Must also apply 10V common-mode in buddy box, set E ADC gain for 2V range with 10Hz filter, and adjust zra voltmeter trim pot)}\vspace{.5cm}\\
+0011 (0x3)	&Synchronous ADC connected to +5V\\
+1011 (0xb)	&Synchronous ADC connected to 0V\\
+1011 (0xb)	&(Default) No fieldcal
+\end{tabular}
+\end{minipage}\\ \hline	
+
+8:6
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf E BNC config} -- mask with \texttt{0xfe3f}}\\
+\begin{tabular}{ll}
+001 (0x1)	&BNCs active, front panel 10Hz filter\\
+100 (0x4)	&(Fieldcal) Front E BNC connected for fieldcal, no filter\\
+000 (0x0)	&(Fieldcal) Front E BNC connected for fieldcal, 10 Hz filter\\
+110 (0x6)	&(Fieldcal) Rear E BNC connected for fieldcal, no filter\\
+101 (0x5)	&(Default) BNCs active, no filter\\
+\end{tabular}
+\end{minipage}\\ \hline
+
+5:3
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf E ADC filter config} -- mask with \texttt{0xffc7}}\\
+\begin{tabular}{ll}
+110 (0x6)	&10Hz E ADC filter\\
+101 (0x5)	&No E ADC filter \vspace{.2cm}\\
+111 (0x7)	&\parbox{12cm}{(Fieldcal) E ADC connected to reference (chosen with bits 12:9) or BNCs instead of measurement channel}\vspace{.2cm}\\
+011 (0x3)	&(Default) Anti-alias 10kHz E ADC filter
+\end{tabular}
+\end{minipage}			\\ \hline
+
+2:0
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf E ADC gain config} -- mask with \texttt{0xfff8}}\\
+\begin{tabular}{ll}
+
+101 (0x5)	&5V range\\
+011 (0x3)	&2V range\\
+011 (0x3)	&(Fieldcal) E ADC range should be set to 2V to trim common-mode.  Otherwise it doesn't matter\\
+110 (0x6)	&(Default) 15V range
+\end{tabular}
+\end{minipage}			%\\ \hline
+
+\end{longtable}
+\end{center}

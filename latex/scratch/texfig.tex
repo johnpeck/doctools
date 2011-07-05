@@ -1,0 +1,22 @@
+% Use this to process xfig figures with latex in them
+%
+% Helvetica 10pt looks best mixed with computer modern
+%
+% 1. Make the figure with latex in it (math mode still needs $)
+% 2. Edit the text to set the "special" flag
+% 3. Export with "combined ps/LaTeX" setting
+% 4. Input the <name>.pstex_t file below
+% 5. latex texfig.tex
+% 6. dvips -E texfig.dvi -o <name>.eps
+\documentclass{article}
+\usepackage{epsfig}
+\usepackage{color}
+%\usepackage{gensymb}
+\usepackage{amssymb}
+\setlength{\textwidth}{100cm}
+\setlength{\textheight}{100cm}
+
+\begin{document}
+\pagestyle{empty}
+    \input{lm317_vs_lt3080.pstex_t}
+\end{document}

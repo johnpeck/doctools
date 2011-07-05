@@ -1,0 +1,8 @@
+To make icons from the /usr/share/icons/Tango/scalable directories, use
+the export function of inkscape:
+inkscape -z -E=output.eps iconfile.svg
+
+Browse the icons using the 32x32 directory of the default Tango icons.
+These are just pngs, so the ristretto program is a nice browser for them:
+ristretto /usr/share/icons/Rodent/48x48/status &
+...will let you browse the status directory.

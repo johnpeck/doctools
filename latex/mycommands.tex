@@ -1,0 +1,291 @@
+% Generalized way to enter data into a table and format the cell.
+% Formats the cell height in a nice way.
+% Usage: \wksentry{<cell width>}{<Text in cell>}
+\newcommand{\wksentry}[2]{
+        \begin{minipage}[c][\height+.5cm][c]{#1}
+        \raggedright
+        #2
+        \end{minipage}
+}%end wksentry
+
+% cwksentry
+% Another nice way to put data in a cell.  Centers the text in a minipage.
+% Usage: \cwksentry{<cell width>}{<Text in cell>}
+\newcommand{\cwksentry}[2]{
+        \begin{minipage}[c][\height+.5cm][c]{#1}
+            \begin{center}
+            #2
+            \end{center}
+        \end{minipage}
+}%end cwksentry
+
+% Shade a cell in a table
+\newcommand{\graycell}[0]{\cellcolor[gray]{.8}}
+
+% Highlight the requirements for a certain step
+\newcommand{\reqtext}[1]{
+    \begin{center}
+        \textbf{#1}
+    \end{center}
+}%end reqtext
+
+% A terminal window showing a command issued by root and the response
+% Usage: \rootcmd{<command>}{<output>}
+\newcommand{\rootcmd}[2]{
+\vspace{-.5\baselineskip}
+\begin{center}
+    \singlespacing
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# #1} \\
+        #2
+    \end{boxedminipage}
+\end{center}
+}% end rootcmd
+
+% A terminal window showing a command issued by an ordinary user
+% and the response
+% Usage: \usercmd{<command>}{<output>}
+\newcommand{\usercmd}[2]{
+\vspace{-.5\baselineskip}
+\begin{center}
+    \singlespacing
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \textbf{\$} \texttt{#1} \\
+        #2
+    \end{boxedminipage}
+\end{center}
+}% end usercmd
+
+% Typewriter formatted text inside a box.  Use this to draw up any kind
+% of terminal communication with any kind of prompt
+% Usage: \boxcmd{<text>}
+\newcommand{\boxcmd}[1]{
+\vspace{-.5\baselineskip}
+\begin{center}
+    \singlespacing
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \noindent
+        \texttt{#1}
+    \end{boxedminipage}
+\end{center}
+}% end \boxcmd
+
+% Show a snippet of a file's contents in a box with the filename as
+% the title.  The filename is shaded.
+% Usage: \filesnip{<filename>}{<snippet>}
+\newcommand{\filesnip}[2]{
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{tabular}{|l|} \hline
+        \rowcolor[gray]{0.8}
+        \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+            \textbf{File:}
+            #1
+        \end{minipage}\\
+        \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+            \vspace{0.5\baselineskip}
+            \ldots \\
+            \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                #2
+            \end{minipage}
+            \vspace{-0.5\baselineskip}\\
+            \ldots \\
+            \vspace{-0.5\baselineskip}
+        \end{minipage}\\
+    \hline
+    \end{tabular}
+\end{center}
+}
+
+% Show the entire contents of a file (not a snippet) in a box with the
+% filename as the title.  The filename is shaded.
+% Usage: \filecont{<filename>}{<text>}
+\newcommand{\filecont}[2]{
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{tabular}{|l|} \hline
+        \rowcolor[gray]{0.8}
+        \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+            \textbf{File:}
+            #1 (Entire file)
+        \end{minipage}\\
+        \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+        \singlespacing
+        #2
+        \vspace{1mm}
+        \end{minipage}\\
+    \hline
+    \end{tabular}
+\end{center}
+}
+
+% Make a note next to an icon.  Like, here's a stop sign and some
+% notes about why what you're doing is bad
+% Usage: \picnote{<image>}{<scale factor>}{<Text in note>}
+\newcommand{\picnote}[3]{
+    \noindent
+    \begin{tabular}{lc@{}}
+    \begin{minipage}[c][\height+1cm][c]{2cm}
+        \includegraphics[clip,scale=#2]{#1}
+    \end{minipage}
+    &
+    \begin{minipage}[c][\height+1cm][c]{\textwidth-2cm-3\tabcolsep}
+    #3
+    \end{minipage}
+    \end{tabular}
+}% end picnote{}
+
+% Make a warning note. This means place some text next to a warning
+% image like a stop sign
+% Usage: \rednote{<Text in note>}
+\newcommand{\rednote}[1]{
+    \noindent \\
+    \begin{tabular}{lc@{}}
+    \begin{minipage}[c][\height+1cm][c]{2cm}
+        \includegraphics[clip,scale=1.5]{doctools/latex/icons/error.eps}
+    \end{minipage}
+    &
+    \begin{minipage}[c][\height+1cm][c]{\textwidth-2cm-3\tabcolsep}
+    #1
+    \end{minipage}
+    \end{tabular}
+}
+
+% Make a general note.  This means place some text next to a little
+% sticky note icon.
+% Usage: \nailnote{<Text in note>}
+\newcommand{\nailnote}[1]{
+    \noindent \\
+    \begin{tabular}{lc@{}}
+    \begin{minipage}[c][\height+1cm][c]{2cm}
+        \includegraphics[clip,scale=0.6]{doctools/latex/icons/notes.eps}
+    \end{minipage}
+    &
+    \begin{minipage}[c][\height+1cm][c]{\textwidth-2cm-3\tabcolsep}
+    #1
+    \end{minipage}
+    \end{tabular}
+}
+
+% Make a note with a question mark next to it.
+\newcommand{\faqnote}[1]{
+    \noindent \\
+    \begin{tabular}{lc@{}}
+    \begin{minipage}[c][\height+1cm][c]{2cm}
+        \includegraphics[clip,scale=1.5]{doctools/latex/icons/question.eps}
+    \end{minipage}
+    &
+    \begin{minipage}[c][\height+1cm][c]{\textwidth-2cm-3\tabcolsep}
+    #1
+    \end{minipage}
+    \end{tabular}
+}
+
+% Make a note indicating that this function can be enabled with a PC
+% Puts a picture reminding somebody of a pc next to some text.
+% Usage: \pcnote{<Text in note>}
+\newcommand{\pcnote}[1]{
+    \noindent \\
+    \begin{tabular}{lc}
+    \begin{minipage}[c][\height+1cm][c]{2cm}
+        \includegraphics[clip,scale=0.8]{doctools/latex/icons/terminal.eps}
+    \end{minipage}
+    &
+    \begin{minipage}[c][\height+1cm][c]{\textwidth-2.5cm}
+    #1
+    \end{minipage}
+    \end{tabular}
+}
+
+% Add a filename to a caption if the document is marked as a draft
+% Need to add the line: \newcommand{\isdraft}{1} in the main document
+% Also, if using this in a caption, use the full caption form:
+% \caption[short caption]{long caption}
+% Usage: \draftnote{<text>}
+\newcommand{\draftnote}[1]{
+    \ifthenelse{\equal{\isdraft}{1}}{\textcolor{green}{\\ \textsl{#1}}}{}
+}
+
+% An ascii command definition.  Just places the command in typewriter
+% font on one side of the page, and its description on the other.
+% Usage: \asciicmd{<command>}{<description}
+\newcommand{\asciicmd}[2]{
+    \noindent
+    \begin{tabular}{@{}l@{}c@{}}
+    \begin{minipage}[c][\totalheight+1cm][c]{\cmdwidth}
+        \texttt{#1}
+    \end{minipage}
+    &
+    \begin{minipage}[c][\totalheight+1cm][c]{\textwidth-\cmdwidth}
+    #2
+    \end{minipage}
+    \end{tabular}
+}
+
+% Make a figure sitting against the left margin that text wraps around
+% Usage: \sidewrap{<image>}{<scale factor>}
+% Must define \sidefigwidth somewhere.  A nice value is 6cm
+\newcommand{\sidewrap}[2]{
+    \begin{wrapfigure}[]{L}[0cm]{\sidefigwidth}
+        \begin{minipage}[c][]{\sidefigwidth}
+            \begin{center}
+                \includegraphics[clip,scale=#2]{#1}
+            \end{center}
+        \end{minipage}
+    \end{wrapfigure}
+}
+
+% Make two pieces of text -- one up against the left margin, and the
+% other against the right.  Like in a resume.
+\newcommand{\leftright}[2]{
+    \begin{tabular}{@{}l@{}r@{}}
+        \begin{minipage}[t][\totalheight]{0.75\textwidth}
+            {\noindent #1}
+        \end{minipage}
+        &\begin{minipage}[t][\totalheight]{0.25\textwidth}
+            \begin{flushright}
+            {\noindent #2}
+            \end{flushright}
+        \end{minipage}\\
+    \end{tabular}
+}
+
+% Make a centered piece of text between two horizontal rules
+\newcommand{\sandwich}[1]{
+    \rule{\textwidth}{0.4pt}
+    \begin{minipage}[c][\totalheight]{\textwidth}
+        \begin{center}
+            {\noindent #1}
+        \end{center}
+    \end{minipage}
+    \vspace{-1.5\baselineskip}\\
+    \rule{\textwidth}{0.4pt}
+}
+
+% Format the text describing a key on the keyboard
+\newcommand{\kbkey}[1]{
+	$<$\textit{#1}$>$
+}
+
+% Format the text describing a GUI's menu item
+\newcommand{\menuitem}[1]{
+	\textbf{#1}
+}
+
+% buttname(name of button)
+% Format text into the name of a front panel button
+\newcommand{\buttname}[1]{
+    \texttt{[\MakeUppercase{#1}]}
+}
+
+% bncname(name of bnc)
+% Format text into the name of a panel BNC connector
+\newcommand{\bncname}[1]{
+    \texttt{\MakeUppercase{#1}}
+}
+
+
+

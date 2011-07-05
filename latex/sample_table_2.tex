@@ -1,0 +1,74 @@
+\newlength \wkswidth
+	\setlength{\wkswidth}{2cm}
+
+\newcommand{\wksentry}[2]{
+		\begin{minipage}[c][\height+.5cm][c]{#1}
+		\raggedright		
+		#2
+		\end{minipage}}
+
+%vm_adc_cal_table
+\begin{table}[ht]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		
+		\wksentry{\wkswidth}{Board name}
+		&\wksentry{\wkswidth}{Kit number}
+		&\wksentry{\wkswidth}{Needs revisions?}
+		&\wksentry{\wkswidth}{Number in stock}
+		&\wksentry{\wkswidth}{Number needed}
+		&\wksentry{\wkswidth}{Number we should order}\\
+		\hline \hline
+		%End of column headings
+		
+		\wksentry{\wkswidth}{Analog control}
+		&218	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{External I/V}
+		&221	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{External voltmeter}
+		&220	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{RTD}
+		&219	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{Buddy box motherboard}
+		&222	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{Internal I/V}
+		&224	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{Signal generation}
+		&213	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{System}
+		&214	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{Power distribution}
+		&223	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{Front panel}
+		&217	&	&	&	&\\
+		\hline
+		
+		\wksentry{\wkswidth}{Chassis kit}
+		&225	&	&	&	&\\
+		\hline
+
+
+
+		\end{tabular}
+		\caption{Worksheet helpful for deciding which boards to order.\label{boards}}
+	\end{center}
+\end{table}

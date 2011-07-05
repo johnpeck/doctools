@@ -1,0 +1,82 @@
+\input{doctools/latex/notes_template.tex}   %Page setup
+\input{doctools/latex/tikzstuff.tex}
+
+\begin{document}
+% \doublespacing %set double spacing
+
+
+\tikzstyle{mybox} = [draw=black, inner sep=1pt]
+
+
+
+\begin{tikzpicture}
+\node [mybox] (newbox) {
+    \begin{minipage}{0.50\textwidth}
+        \begin{tabular}{l}
+            \rowcolor[gray]{0.8}
+            \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                \textbf{File:}
+                some junk
+            \end{minipage}\\
+            \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                \singlespacing
+                \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                more junk
+                \end{minipage}
+                \vspace{0.5\baselineskip}\\
+            \end{minipage}\\
+        \end{tabular}
+    \end{minipage}
+};
+
+\node [mybox, below of=newbox, node distance=3cm] (stop) {
+    \begin{minipage}{0.50\textwidth}
+        \begin{tabular}{l}
+            \rowcolor[gray]{0.8}
+            \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                \textbf{File:}
+                lots junk
+            \end{minipage}\\
+            \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                \singlespacing
+                \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                evan junk
+                \end{minipage}
+                \vspace{0.5\baselineskip}\\
+            \end{minipage}\\
+        \end{tabular}
+    \end{minipage}
+};
+
+% Create a node named "jpbox" for a function named "some function."  The
+% node will be positioned 3cm below the node named "stop."  The node will
+% contain the text "some stuff."
+\funcnode{below of=stop, node distance=3cm}{jpbox}{some function}{some stuff};
+% Create another node
+\funcnode{below of=jpbox, node distance=3cm}{underbox}{more function}{junky junk};
+
+% Create a decision point
+\node [decision, below of=underbox] (fulbuf) {
+Full buffer?
+};
+% Create a square node
+\node [block, below of=fulbuf] (eatme) {
+Eat some of me
+};
+
+
+% Draw arrows
+    \path [line] (newbox) -- (stop);
+    \path [line] (stop) -- (jpbox);
+    \path [line] (jpbox) -- (underbox);
+    \draw [->] (underbox.west) to [bend left=90] (newbox.west);
+    \draw [->] (underbox.east) -| ++(2,0) |- (newbox.east);
+    \draw [->] (underbox.south) -- (fulbuf)
+        node[midway,right]{False};
+    \draw [->] (fulbuf.south) -- (eatme);
+    \draw [->] (fulbuf.west) -- ++(-1,0) |- (half);
+\end{tikzpicture}
+
+
+
+\end{document}

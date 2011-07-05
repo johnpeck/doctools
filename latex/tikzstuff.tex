@@ -1,0 +1,59 @@
+\usepackage{tikz} % For making flow charts
+\usetikzlibrary{shapes,decorations,arrows}
+\usetikzlibrary{positioning}
+
+%---------------------------Define nodes and lines---------------------
+\tikzstyle{funcnode} = [draw=black, inner sep=1pt]
+\newlength{\fnodewidth} % Width of the box for funcnode
+\setlength{\fnodewidth}{6cm}
+
+\tikzstyle{arrow} = [draw, -latex]
+
+% The decision node.
+% See the xcolor package documentation for help defining fill colors.
+% The draw option causes a border to be drawn.
+% It's better to set node distance here than in the picture.
+\tikzstyle{decision} = [diamond, draw, fill=blue!10, text width=2cm,
+    align=center, node distance=4cm, inner sep=2pt]
+
+% The block node.  Use this for flowcharts.
+\tikzstyle{block} = [rectangle, draw, fill=blue!10, text width=2cm,
+    align=center, rounded corners=2pt, minimum height=4em,
+    node distance=3cm]
+
+%---------------------------End nodes and lines------------------------
+
+% funcnode
+% Create a node that describes a function.  The function name is printed
+% on a shaded header, in boldface.
+%
+% This only works inside a tikzpicture environment.  This looks wrong
+% when using \doublespacing -- the shaded region is too thick.
+%
+% Usage: \funcnode{<position>,<separation>}{<node name>}{<function name}
+%                    {<node text contents>};
+%
+% See the sample_tikz.tex file for an example of all this.
+\newcommand{\funcnode}[4]{
+    \node [funcnode, #1] (#2) {
+        \begin{minipage}{\fnodewidth}
+            \begin{tabular}{l}
+                \rowcolor[gray]{0.8}
+                \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                    \singlespacing
+                    \begin{center}
+                        \vspace{-\baselineskip}
+                        \textbf{#3}
+                    \end{center}
+                \end{minipage}\\
+                \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                    \singlespacing
+                    \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+                    #4
+                    \end{minipage}
+                    \vspace{0.5\baselineskip}\\
+                \end{minipage}\\
+            \end{tabular}
+        \end{minipage}
+    } % end node
+} % end funcnode

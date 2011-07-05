@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Define the fancy page style for the table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\rhead{}
+%\rhead{\rightmark}	%This prints section names for the right heading
+%\lhead{\leftmark}
+
+%*********uncomment this to put the SRS logo on************
+%\lfoot{
+%\begin{minipage}[t]{3in}
+%\scalebox{1}
+%{
+%\includegraphics*{srs_long.ps}
+%}
+%\end{minipage}
+%}
+%*********************************************************
+%\lfoot{kick me}
+\rfoot{\today}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%\setlength{\headrulewidth}{1pt}%set these widths to zero to make them gone
+%\setlength{\footrulewidth}{1pt}

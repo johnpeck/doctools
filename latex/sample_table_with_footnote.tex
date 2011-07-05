@@ -1,0 +1,118 @@
+\begin{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Define the longtable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{longtable}{cccccc >{\scriptsize}p{3cm}}
+%\begin{longtable}{>{\scriptsize}p{3cm} >{\scriptsize}p{6cm} >{\scriptsize}p{4cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm}}
+%\begin{longtable}{>{\scriptsize}p{7cm} c c c c}
+\begin{longtable}{|c|l|}
+%\hline
+\multicolumn{2}{c}{Buddy box configuration shift register field descriptions}\\
+\hline
+
+\bf Field
+&\multicolumn{1}{|c|}{\bf Description}	\\ \hline		
+\endfirsthead%now we're done defining the firt table heading
+
+%\hline
+\multicolumn{2}{c}{\small \sl Continued from previous page}\\
+\hline
+
+\bf Field
+&\multicolumn{1}{|c|}{\bf Description}	
+\endhead%now we're done defining the table heading on everything but the first page
+
+%\\ \hline
+\multicolumn{2}{c}{\small \sl Continued on next page}\\
+%\hline
+\endfoot%now we're done defining the foot of tables right before a page break
+\hline
+\caption{Buddy box configuration shift register field descriptions\label{bb_config_table}}
+\endlastfoot%now we're done defining the last foot of the table
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Start the table data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+23	&Unused	-- set to 0		\\ \hline
+
+22
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf Fieldcal sink switch} -- mask with \texttt{0xBFFFFF}}\\
+\begin{tabular}{ll}
+0x1	&(fieldcal) WE input connected to fieldcal current sources -- fieldcal sink connected\\
+0x0	&(default) WE input connected to WE BNC only -- fieldcal sink disconnected\\
+\end{tabular}
+\end{minipage}\\ \hline
+
+
+21:16
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf External I/V ranges} -- mask with \texttt{0xC0FFFF}}\\
+\begin{tabular}{ll}
+0x1	&1nA\\
+0x21	&10nA\\
+0x31	&100nA\\
+0x39	&1$\mu$A\\
+0x3	&10$\mu$A\\
+0x7	&100$\mu$A\\
+0x0	&(default) Internal ranges
+\end{tabular}
+\end{minipage}\\ \hline
+
+15	&Unused	-- set to 0		\\ 
+\hline
+
+14
+&\begin{minipage}[c][\height+0.5cm][c]{15cm}
+{\bf Common-mode potentiometer increment -- mask with \texttt{0xFFBFFF}}\\
+\begin{tabular}{ll}
+\FallingEdge	&(fieldcal) Potentiometers increment on falling edges made by multiple writes to the register\\
+\end{tabular}
+\end{minipage}\\
+\hline
+
+13
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf Buddy box CE switch} -- mask with \texttt{0xFFDFFF}}\\
+\begin{tabular}{ll}
+0x1	&(fieldcal) CE connected to main voltmeter\\
+0x0	&(default) CE connected to CE BNC\\
+\end{tabular}
+\end{minipage}\\ \hline
+
+12:10
+&\begin{minipage}{15cm}
+\vspace{.2cm}{{\bf Voltmeter common-mode trim} -- mask with \texttt{0xFFE3FF}}\\
+\begin{tabular}{ll}
+0x6	&(fieldcal) Increase main voltmeter potentiometer\\
+0x2	&(fieldcal) Decrease main voltmeter potentiometer\\
+0x5	&(fieldcal) Increase zra voltmeter potentiometer\\
+0x1	&(fieldcal) Decrease zra voltmeter potentiometer\\
+0x3	&(default)  Freeze digital pot positions\\
+\end{tabular}
+\end{minipage}\\ \hline
+
+
+9	&Unused	-- set to 0		\\ \hline
+
+8:0
+&\begin{minipage}{15cm}
+\setcounter{mpfootnote}{0}
+\vspace{.2cm}{{\bf Field calibration voltage and current sources} -- mask with \texttt{0xFFFE00}}\\
+\begin{tabular}{ll}
+0x1DC	&(fieldcal) Source 1$\mu$A to WE\footnote{Must also set fieldcal sink to route current sources to WE} \\
+0x1BC	&(fieldcal) Source 10$\mu$A to WE\footnotemark[\value{mpfootnote}]\\
+0x17C	&(fieldcal) Source 100$\mu$A to WE\footnotemark[\value{mpfootnote}]\\
+0x1ED	&(fieldcal) Apply 10V common-mode\footnote{Must disconnect fieldcal sink}\\
+0x1E7	&(fieldcal) Apply -10V common-mode\footnotemark[\value{mpfootnote}]\\
+0x1EB	&(fieldcal) Apply 0V common-mode\footnotemark[\value{mpfootnote}]\\
+0x1ED	&(fieldcal) Apply 10V differential\footnote{Must set I/V to 1A range and connect fieldcal sink}\\
+0x1FD	&(fieldcal) 10k$\Omega$ dummy load\footnote{Must also connect CE to main voltmeter for unity gain with dummy load}\\
+0x0DA	&(default) Do nothing
+\end{tabular}
+\end{minipage}\\ \hline
+
+
+
+\end{longtable}
+\end{center}

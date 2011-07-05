@@ -1,0 +1,1 @@
+../../bin/startxfig.sh

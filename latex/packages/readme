@@ -1,0 +1,2 @@
+Move these folders to /usr/share/texmf/tex/latex and use texhash to make
+latex aware of them.

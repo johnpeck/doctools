@@ -1,0 +1,36 @@
+% Bit numbers in register field definitions
+% Usage: \bitnum{<int>}
+
+\newlength{\bitwidth}
+\setlength{\bitwidth}{0.4cm}
+\newcommand{\bitnum}[1]{
+    \begin{minipage}[c][\height+.5cm][c]{\bitwidth}
+        \begin{center}
+        #1
+        \end{center}
+    \end{minipage}
+}
+
+
+% Bit fields descriptions.  Set span to the number of neighboring
+% bits to be described
+% Usage: \bitdesc{<span>}{<alignment>}{<description>}
+%
+% The text description needs a minimum width regardless of how many
+% bits it describes.  1 inch (2.5cm) seems about right for this.
+%
+% When this is used at the beginning of a row, alignment should be |c|
+% Middle and end of a row -- c|
+\newcommand{\bitdesc}[3]{
+    \multicolumn{#1}{#2}{
+        \begin{minipage}[c][\height+.5cm][c]{2.2cm}
+            \begin{center}
+            #3
+            \end{center}            
+        \end{minipage} 
+    }% end multicolumn
+}% end bitdesc
+
+
+
+

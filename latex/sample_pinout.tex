@@ -1,0 +1,279 @@
+\normalsize
+\begin{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Define the longtable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{longtable}{cccccc >{\scriptsize}p{3cm}}
+%\begin{longtable}{>{\scriptsize}p{3cm} >{\scriptsize}p{6cm} >{\scriptsize}p{4cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm}}
+\begin{longtable}{c >{\scriptsize}p{8cm} c}
+
+\multicolumn{3}{c}{\normalsize \bf 50-pin header connections to signal generation board (J1401)}\\
+\hline
+
+\bf Net name	
+&\bf \normalsize \centering Description
+&\bf J1401:pin	
+\endfirsthead	%now we're done defining the firt table heading
+
+
+\multicolumn{3}{c}{\small \sl Continued from previous page}\\
+\hline
+
+\bf Net name	
+&\bf \normalsize \centering Description
+&\bf J1401:pin
+\endhead	%now we're done defining the table heading on everything but the first page
+
+\\ \hline
+\multicolumn{3}{c}{\small \sl Continued on next page}\\
+\endfoot%now we're done defining the foot of tables right before a page break
+\hline
+\caption{\normalsize 50-pin header connections to signal generation board (J1401)}
+\endlastfoot%now we're done defining the last foot of the table
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Start the table data 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Net name		%Description		%Connector and pin
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&1\\
+
+\verb8ser_clk_int8
+&Clock for internal serial devices.  The devices shift data on the clock edges, making this an edge-sensitive line that should be filtered.
+&2\\
+
+\verb8ser_data_int8
+&Data for internal serial devices.  Data is level-sensitive and doesn't need filtering.
+&3\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&4\\
+
+\verb8bwidth_ctrl_sr_cs8
+&Bandwidth control shift register chip select.  I call this a chip select, but it's really an edge-sensitive storage register clock.  So it needs to be filtered.
+&5\\
+
+\verb8analog_oe_n8
+&\begin{minipage}[t]{8cm}
+	\raggedright
+	Output enable for all analog shift registers, both inside the box and in the buddy box:
+	\begin{tabular}{cl}
+	\textbf{1}	&\parbox[t]{7cm}{Shift registers disabled -- registers have high Z outputs but will accept data}\\	
+	\textbf{0}	&Shift registers enabled\\
+	\end{tabular}	
+\end{minipage}
+&6\\
+
+
+
+\verb8off_dac_a_cs8
+&Chip select for first quad 12-bit DAC. Level sensitive. 
+&7\\
+
+\verb8off_dac_b_cs8
+&Chip select for second quad 12-bit DAC. Level sensitive. 
+&8\\
+
+\verb8extin_gain_cs8
+&Chip select for external input gain calibration multiplying DAC.  Level sensitive.  
+&9\\
+
+\verb8limiting8
+&Output from the voltage clamp comparator
+&10\\
+
+\verb8fp_igain_cs8
+&Front panel I/V gain trim multiplying DAC chip select. Level sensitive.
+&11\\
+
+\verb8int_iv_sr_cs8
+&Chip select for the internal I/V shift register.  I call this a chip select, but it's really an edge-sensitive storage register clock.  So it needs to be filtered.
+&12\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&13\\
+
+\verb8int_vm_sr_cs8
+&Chip select for the internal voltmeter shift register.  I call this a chip select, but it's really an edge-sensitive storage register clock.  So it needs to be filtered.
+&14\\
+
+(spare)
+&Connected to test point
+&15\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&16\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&17\\
+
+\verb8e_adc_data8
+&E ADC dedicated data line
+&18\\
+
+\verb8adc_clk8
+&Clock for the ADCs.  Edge sensitive -- needs filtering.
+&19\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&20\\
+
+\verb8i_adc_data8
+&I ADC dedicated data line
+&21\\
+
+\verb8adc_convert8
+&Conversion signal for the E, I, and sync ADCs.  Edge sensitive -- needs filtering.
+&22\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&23\\
+
+\verb8sync_adc_data8
+&sync ADC dedicated data line
+&24\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&25\\
+
+\verb8fp_egain_cs8
+&Chip select for the front panel E out gain trim multiplying DAC.  Level sensitive.
+&26\\
+
+\verb8ebias_cs8
+&Chip select for the E bias rejection DAC.  Level sensitive.
+&27\\
+
+\verb8rp_egain_cs8
+&Chip select for the rear panel E out gain trim multiplying DAC. Level sensitive.
+&28\\
+
+\verb8boost_dac_cs8
+&Chip select for the current interrupt boost DAC. Level sensitive.
+&29\\
+
+\verb8pos_fbck_cs8
+&Chip select for the positive feedback multiplying DAC. Level sensitive.
+&30\\
+
+\verb8rp_igain_cs8
+&Chip select for rear panel I out gain trim multiplying DAC. Level sensitive.
+&31\\
+
+\verb8interrupt8
+&\begin{minipage}[t]{5cm}
+	\raggedright
+	Controls the AC switch:
+	\begin{tabular}{cl}
+	\textbf{1}	&AC switch closed\\	
+	\textbf{0}	&AC switch open\\
+	\textbf{Z}	&AC switch open\\
+	\end{tabular}	
+\end{minipage}
+&32\\
+
+\verb8cemon_gain_cs8
+&Chip select for the CE monitor gain trim multiplying DAC. Level sensitive.
+&33\\
+
+\verb8sw_sense8
+&\begin{minipage}[t]{5cm}
+	\raggedright
+	Indicates the status of the AC switch:
+	\begin{tabular}{cl}
+	\textbf{1}	&Front panel switch ``in'' (closed) and AC switch closed\\
+	\textbf{0}	&AC switch open\\	
+	\end{tabular}	
+\end{minipage}
+&34\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&35\\
+
+\verb8ser_data_out_ext8
+&Serial data to be sent to the buddy box. Level sensitive.
+&36\\
+
+\verb8ee_cs_ext8
+&Chip select for the eeprom in the buddy box.  Level sensitive.
+&37\\
+
+\verb8ser_clk_ext8
+&Clock for serial devices in the buddy box.  Edge sensitive -- needs filtering.
+&38\\
+
+\verb8sr_cs_ext8
+&Chip select for the shift register in the buddy box.  Level sensitive.
+&39\\
+
+(spare)
+&Connected to test point
+&40\\
+
+\verb8ser_data_in_ext_buff8
+&Serial data from the buddy box eeprom.  Level sensitive.
+&41\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&42\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&43\\
+
+\verb8surge8
+&\begin{minipage}[t]{7cm}
+	\raggedright
+	Maximum current flag from the power amplifier
+	\begin{tabular}{cl}
+	\textbf{1}	&Power amplifier output current $>1.2$A\\
+	\textbf{0}	&OK\\
+	\end{tabular}	
+\end{minipage}
+&44\\
+
+\verb8+20V_sig8
+&+20V analog rail
+&45\\
+
+\verb8-20V_sig8
+&-20V analog rail
+&46\\
+
+\verb8tsense8
+&\begin{minipage}[t]{5cm}
+	\raggedright
+	Thermal flag from the power amplifier
+	\begin{tabular}{cl}
+	\textbf{1}	&Power amplifier die temperature $>140\celsius$\\
+	\textbf{0}	&OK\\
+	\end{tabular}	
+\end{minipage}
+&47\\
+
+\verb80V_dig8
+&Ground reference from the signal generation board
+&48\\
+
+\verb8+20V_sig8
+&+20V analog rail
+&49\\
+
+\verb8-20V_sig8
+&-20V analog rail
+&50\\
+
+
+\end{longtable}
+\end{center}
+\normalsize

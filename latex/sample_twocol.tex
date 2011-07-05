@@ -1,0 +1,139 @@
+\input{doctools/latex/notes_template.tex} 	%Page setup
+\input{doctools/latex/mycommands.tex}		%Some useful commands
+
+% Change the topmargin length set in the notes template
+\setlength{\topmargin}{-0.5in}
+\setlength{\oddsidemargin}{-0.5in}
+\setlength{\textwidth}{7.5in}
+\setlength{\columnsep}{0.5in}
+\setlength{\columnseprule}{1pt}
+\setlength{\textheight}{8.75in}
+\setlength{\extrarowheight}{0.5mm}
+
+
+\newcommand{\atspace}{1in} % Space for first (attribute) column
+\newcommand{\valspace}{2.2in} % Space for second (value) column
+\newcolumntype{R}{>{\raggedright}m{\atspace}m{\valspace}}
+
+
+\begin{document}
+\thispagestyle{empty}
+\twocolumn
+
+
+\noindent \textbf{Measurement accuracy}
+\medskip \\ \bigskip
+\begin{tabular}{R}
+    Voltage & $\pm$0.2\% of $\left( \mathrm{V_{RE} - V_{WE \; SENSE}} \right) \pm \mathrm{2mV}$\\
+    Current & $\pm$0.2\% of $\left( \mathrm{I_{WE}} \right) \pm 0.2\%$ of range \\
+    Sample period & $4\mu$s\\
+\end{tabular}
+
+\noindent \textbf{Differential electrometer}
+\medskip \\ \bigskip
+\begin{tabular}{R}
+    Input impedance     & $>$ 1T$\Omega \parallel 20$pF\\
+    Input bias current  & $<$ 20pA\\
+    Bandwidth           & $>$ 10MHz
+\end{tabular}
+
+\noindent \textbf{Cell current input}
+\medskip \\ \bigskip
+\begin{tabular}{R}
+    Ranges    &1nA to 1A in decade ranges\\
+\end{tabular}
+
+
+\noindent \textbf{Power amplifier}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Compliance  &  $\pm$30V at $\pm$1A \\
+    Slew rate   & $\geq$10V/$\mu$s \\
+\end{tabular}
+
+
+\noindent \textbf{Potentiostat mode}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Applied potential accuracy  &  $\pm$1\% of setting $\pm$ 2mV \\
+    Automatic scan rate         & 0.1mV/s $\rightarrow$ 10kV/s\\
+    Applied potential range     & $\pm$15V versus reference \\
+    Noise and ripple            & $<20\mathrm{\mu V_{rms}}$ (1Hz $\rightarrow$ 10kHz) \\
+\end{tabular}
+
+\noindent \textbf{Galvanostat mode}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Applied current accuracy  &  $\pm$0.2\% of setting $\pm$0.2\% of current range\\
+    Automatic scan rate      & 1pA/s $\rightarrow$ 2A/s\\
+\end{tabular}
+    
+\noindent \textbf{ZRA mode}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Voltage offset & \texttt{CE sense} and \texttt{WE sense} electrodes held within 2mV of each other\\
+\end{tabular}
+
+\noindent \textbf{Control loop}
+\medskip \\ \bigskip
+\begin{tabular}{R}
+    Bandwidth limits    & 10Hz, 100Hz, 1kHz, 10kHz, 100kHz, $>$1MHz\\
+    Voltage (\texttt{CE}) limit accuracy &$\pm$100mV\\
+\end{tabular}
+
+\noindent \textbf{Temperature measurement}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Sensor      &Pt RTD\\
+    Accuracy    &$\pm$1$\celsius$, $\pm$0.3$\celsius$ typical below 100$\celsius$ \\
+\end{tabular}
+
+\pagebreak
+
+\noindent \textbf{IR compensation}
+\medskip \\ \bigskip
+\begin{tabular}{R}
+    Positive feedback range &3$\Omega$ $\rightarrow$ 3G$\Omega$ depending on current range\\
+    Interrupt switching time & $<$1$\mu$s (1k$\Omega$ resistive load)\\
+    Interrupt duration & 100$\mu$s $\rightarrow$ 1s\\
+    Interrupt frequency & 0.1Hz $\rightarrow$ 300Hz\\
+\end{tabular}
+
+\noindent \textbf{Inputs and outputs -- front panel}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Voltage (E)     &$\pm$15V $\mathrm{V_{RE} - V_{WE \; SENSE}}$ output\\
+    \hspace*{3mm}Filters         & None, 10Hz low-pass\\
+    \hspace*{3mm}Bias rejection & $\pm$15V (full range)\\
+    Current (I)     &$\pm$2V output, 1V = full scale\\
+    \hspace*{3mm}Filters         & None, 10Hz low-pass\\
+    \hspace*{3mm}Bias rejection & $\pm$2V (full range)\\
+    Rotator         &0 $\rightarrow$ 10V output\\
+    External stimulus &$\pm$15V input, $Z_{\mbox{in}} =$ 10k$\Omega \parallel$ 50pF, 1MHz bandwidth\\
+\end{tabular}
+
+\noindent \textbf{Inputs and outputs -- rear panel}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Timebase    &10MHz input, 1V$_{\mbox{pp}}$\\
+    Raw E       &$\mathrm{V_{RE} - V_{WE \; SENSE}}$ output\\
+    Raw I       &$\pm$2V output, 1V = full scale\\
+    CE/3        &$\pm10$V $\mathrm{V_{CE}/3}$ voltage output,  1MHz bandwidth\\ 
+    Sync ADC    &$\pm10$V analog input sampled synchronously with E and I\\
+    CI Sync     &Digital output -- falling edge upon current interruption for IR compensation\\
+    Scan trigger    &Digital input -- falling edge begins automatic scan\\
+    TTL input   &General purpose digital input\\
+    TTL output  &General purpose digital output\\
+    Program E/I &$\pm$15V output -- sum of external and internal voltage programs\\
+    ADC 1,2,3   &General-purpose $\pm$10V analog inputs\\
+ \end{tabular}   
+
+
+\noindent \textbf{General}
+\medskip \\ \medskip
+\begin{tabular}{R}
+    Remote interfaces  &IEEE-488.2 and TCP/IP interfaces standard
+\end{tabular}
+
+
+\end{document}

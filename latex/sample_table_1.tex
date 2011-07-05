@@ -1,0 +1,41 @@
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|c|c|c|}\hline
+&&\\
+Size	&Value (mils)	&Comment\\
+&&\\ \hline \hline
+
+%Minimum copper spacing
+\parbox[c][1.5\height][c]{5cm}{Minimum copper spacing}
+&6
+&\parbox[c][1.5\height][c]{5cm}{Sierra allows 6 mils}\\ \hline
+
+%Minimum copper width
+\parbox[c][1.5\height][c]{5cm}{Minimum copper width}
+&6
+&\parbox[c][1.5\height][c]{5cm}{Sierra lumps this together with spacing as ``minimum trace and space''}\\ \hline
+
+%Minimum touching copper overlap
+\parbox[c][1.5\height][c]{5cm}{Minimum touching copper overlap}
+&10
+&\parbox[c][1.5\height][c]{5cm}{This is how PCB knows that two conductors are touching, and not a constraint imposed by the board house}\\ \hline
+
+%Minimum silk width
+\parbox[c][1.5\height][c]{5cm}{Minimum silk width}
+&10
+&\parbox[c][1.5\height][c]{5cm}{Sierra allows down to 5 mils}\\ \hline
+
+%Minimum drill diameter
+\parbox[c][1.5\height][c]{5cm}{Minimum drill diameter}
+&15
+&\parbox[c][1.5\height][c]{5cm}{Sierra allows 15 mils}\\ \hline
+
+%Minimum annular ring
+\parbox[c][1.5\height][c]{5cm}{Minimum annular ring}
+&5
+&\parbox[c][1.5\height][c]{5cm}{Sierra allows 5 mils}\\ \hline
+
+\end{tabular}
+\end{center}
+\caption{Good DRC settings for use with Sierra Proto Express\label{sierra_drc}}
+\end{table}

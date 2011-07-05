@@ -1,0 +1,25 @@
+NAME= 		main
+TEXSRCS=	current_revs.tex \
+			power_con.tex \
+			register_setting.tex \
+			control_loop.tex \
+			buddy_box.tex \
+			internal_e_config.tex \
+			internal_iv.tex \
+			offset_dacs.tex \
+			sig_gen_connect.tex \
+			temperature.tex \
+			sync_adc.tex \
+			overload.tex \
+			current_interrupt.tex \
+			ce_monitor.tex \
+			iv_calibration.tex \
+			cmrr.tex \
+			ad5452.tex \
+			umbilical.tex \
+			redbutton.tex \
+			milestones.tex
+XDVI_FLAGS= -paper letter -interpreter /usr/bin/X11/gs
+DVIPS_FLAGS= -t letter
+include /usr/share/latex-mk/latex.gmk
+

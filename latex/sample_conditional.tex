@@ -1,0 +1,10 @@
+%Figure out which document we're in to label some references
+\newcommand{\refdoc}{name}
+\ifthenelse{\equal{\detokenize{analog_howto}}{\jobname}}{
+\renewcommand{\refdoc}{this document}	%true: we're in the analog_howto
+}{
+\renewcommand{\refdoc}{the analog howto}
+}
+
+%To conditionally print text based on some status variable
+\ifthenelse{\equal{\status}{draft}}{This is a draft}{}

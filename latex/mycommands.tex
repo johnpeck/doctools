@@ -225,11 +225,16 @@
     \end{tabular}
 }
 
-% Make a figure sitting against the left margin that text wraps around
-% Usage: \sidewrap{<image>}{<scale factor>}
+% Make a figure sitting against the left margin that text wraps around.
+%
+% The number of shortened text lines produced must be specified to avoid
+% conflicts with floats below the figure.  Change this number if your
+% floats don't move over to the left margin.
+%
+% Usage: \sidewrap{<image>}{<scale factor>}{<number of short lines>}
 % Must define \sidefigwidth somewhere.  A nice value is 6cm
-\newcommand{\sidewrap}[2]{
-    \begin{wrapfigure}[]{L}[0cm]{\sidefigwidth}
+\newcommand{\sidewrap}[3]{
+    \begin{wrapfigure}[#3]{L}[0cm]{\sidefigwidth}
         \begin{minipage}[c][]{\sidefigwidth}
             \begin{center}
                 \includegraphics[clip,scale=#2]{#1}
@@ -267,7 +272,10 @@
 
 % Make a horizontal line dividing two sections of text
 \newcommand{\hdivline}{
-    \rule{\textwidth}{1pt}
+    \begin{center}
+        \vspace{-0.5\baselineskip}
+        \rule{\textwidth}{1pt}
+    \end{center}
 }
 
 % Format the text describing a key on the keyboard

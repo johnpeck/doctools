@@ -73,6 +73,21 @@
 \end{center}
 }% end \boxcmd
 
+% boxtext
+% Simply text inside of a box of width \textwidth.
+% Usage: \boxtext{<text>}
+\newcommand{\boxtext}[1]{
+\vspace{-.5\baselineskip}
+\begin{center}
+    \singlespacing
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \noindent
+        {#1}
+    \end{boxedminipage}
+\end{center}
+}% end \boxtext
+
 % Show a snippet of a file's contents in a box with the filename as
 % the title.  The filename is shaded.
 % Usage: \filesnip{<filename>}{<snippet>}
@@ -276,6 +291,12 @@
         \vspace{-0.5\baselineskip}
         \rule{\textwidth}{1pt}
     \end{center}
+}
+
+% codecomment
+% Format text into a comment for a code snippet
+\newcommand{\codecomment}[1]{
+    \textsl{\textcolor{green}{\# {#1}}}
 }
 
 % Format the text describing a key on the keyboard

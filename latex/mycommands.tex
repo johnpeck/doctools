@@ -321,5 +321,28 @@
     \texttt{\MakeUppercase{#1}}
 }
 
+% progname(name of program)
+% Format text into the name of an external program, like gnuplot
+% or gnetlist.
+\newcommand{\progname}[1]
+{
+    \textbf{{#1}}
+}
+
+% urlname(name of a url or file)
+% Format text into the name of a url or file.
+\newcommand{\urlname}[1]
+{
+    \textit{{#1}}
+}
+
+% mfgpart(name of a part)
+% Format text into the name of a part, like the opa134 opamp or the
+% atmega169 uC.
+\newcommand{\mfgpart}[1]
+{
+    \MakeUppercase{#1}
+}
+
 
 

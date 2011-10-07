@@ -2,7 +2,7 @@
 % Formats the cell height in a nice way.
 % Usage: \wksentry{<cell width>}{<Text in cell>}
 \newcommand{\wksentry}[2]{
-        \begin{minipage}[c][\height+.5cm][c]{#1}
+        \begin{minipage}[c][\totalheight+.5cm][c]{#1}
         \raggedright
         #2
         \end{minipage}
@@ -12,7 +12,7 @@
 % Another nice way to put data in a cell.  Centers the text in a minipage.
 % Usage: \cwksentry{<cell width>}{<Text in cell>}
 \newcommand{\cwksentry}[2]{
-        \begin{minipage}[c][\height+.5cm][c]{#1}
+        \begin{minipage}[c][\totalheight+.5cm][c]{#1}
             \begin{center}
             #2
             \end{center}
@@ -24,7 +24,7 @@
 
 % Highlight the requirements for a certain step
 \newcommand{\reqtext}[1]{
-    \begin{center}
+    \begin{center} 
         \textbf{#1}
     \end{center}
 }%end reqtext

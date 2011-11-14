@@ -56,15 +56,7 @@
 % to make an itemized list where each subitem is inside its own table cell
 \newcommand{\tabindent}{\hspace*{3mm}}
 
-% \cftsubsecnumwidth
-% Set the space between the beginning of the subsection number and the
-% beginning of the subsection title in the toc
-\setlength{\cftsubsecnumwidth}{1cm}
 
-% \cftsubsubsecnumwidth
-% Set the space between the beginning of the subsubsection number and the
-% beginning of the subsubsection title in the toc
-\setlength{\cftsubsubsecnumwidth}{1.5cm}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,6 +110,35 @@
     \renewcommand{\footrulewidth}{0.4pt}
 }%End of references fancy page style definition
 
+
+%----------------------------------------------------------------------
+% Configure section numbers
+%
+% The code word that prints the current value of the counter in your 
+% document is \thecounter. That is, \thepart, \thechapter, \thesection 
+% and so on.
+%
+% See the tocloft package documentation for descriptions of the \cft
+% commands (contents, figures, tables)
+%----------------------------------------------------------------------
+
+% Redefine the section numbers to reference the part number.  
+% For example, the first section in the first part will look like
+% I.1 instead of just 1.
+\renewcommand{\thesection}{\thepart.\arabic{section}}
+
+% \cftsecnumwidth
+\setlength{\cftsecnumwidth}{1cm}
+
+% \cftsubsecnumwidth
+% Set the space between the beginning of the subsection number and the
+% beginning of the subsection title in the toc
+\setlength{\cftsubsecnumwidth}{1cm}
+
+% \cftsubsubsecnumwidth
+% Set the space between the beginning of the subsubsection number and the
+% beginning of the subsubsection title in the toc
+\setlength{\cftsubsubsecnumwidth}{1.5cm}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

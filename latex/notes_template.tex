@@ -117,9 +117,6 @@
 % The code word that prints the current value of the counter in your 
 % document is \thecounter. That is, \thepart, \thechapter, \thesection 
 % and so on.
-%
-% See the tocloft package documentation for descriptions of the \cft
-% commands (contents, figures, tables)
 %----------------------------------------------------------------------
 
 % Redefine the section numbers to reference the part number.  
@@ -127,18 +124,34 @@
 % I.1 instead of just 1.
 \renewcommand{\thesection}{\thepart.\arabic{section}}
 
-% \cftsecnumwidth
+%----------------------------------------------------------------------
+% Configure the table of contents
+%
+% See the tocloft package documentation for descriptions of the \cft
+% commands (contents, figures, tables)
+%----------------------------------------------------------------------
+
+% These next commands control the size of the box in which the title
+% number is formatted.  The title number will be flushleft inside of
+% the box.  Note that this box does not grow as the title number grows.
+% So big title numbers like 1.2.1234 will need bigger boxes, and you'll
+% need to set these by hand.  This is actually a feature -- when you
+% look at the toc, all subsubsection titles will be indented the same
+% amount, regardless of the width of the title number.
+
+% \cftsecnumwidth -- the width from the beginning of the title number
+% to the title when the number terminates in a section number
 \setlength{\cftsecnumwidth}{1cm}
 
-% \cftsubsecnumwidth
-% Set the space between the beginning of the subsection number and the
-% beginning of the subsection title in the toc
-\setlength{\cftsubsecnumwidth}{1cm}
+% \cftsubsecnumwidth -- the width from the beginning of the title number
+% to the title when the number terminates in a subsection number
+\setlength{\cftsubsecnumwidth}{1.5cm}
 
-% \cftsubsubsecnumwidth
-% Set the space between the beginning of the subsubsection number and the
-% beginning of the subsubsection title in the toc
-\setlength{\cftsubsubsecnumwidth}{1.5cm}
+% \cftsubsubsecnumwidth -- the width from the beginning of the title 
+% number to the title when the number terminates in a subsubsection number
+\setlength{\cftsubsubsecnumwidth}{2cm}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

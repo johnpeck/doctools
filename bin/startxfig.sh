@@ -8,7 +8,7 @@
 thisdir="$PWD"
 xfigdir="/doctools/xfig"
 libstr=$thisdir$docdir
-if [ -z "$1"] 
+if [ -z "$1" ] 
 then
 	xfig -library_dir "$libstr" \
 		-cbg beige -freehand_resolution 1 \

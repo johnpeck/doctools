@@ -227,6 +227,12 @@
 % An ascii command definition.  Just places the command in typewriter
 % font on one side of the page, and its description on the other.
 % Usage: \asciicmd{<command>}{<description}
+%
+% Very important: if you want to add a label or index entry for the
+% command, put the \label or \index command inside the {<description>}
+% argument.  Otherwise the \label or \index commands may end up on the
+% page preceeding the minipage -- the index refers to the ascii
+% command on the page before it actually appears.
 \newcommand{\asciicmd}[2]{
     \noindent
     \begin{tabular}{@{}l@{}c@{}}

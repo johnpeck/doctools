@@ -4,6 +4,8 @@
 # Tears out a page of a pdf
 #
 # Usage: pdfpage.sh <page> <pdf file>
+set -e # bash should exit the script if any statement returns a non-true 
+       #return value
 EXPECTED_ARGS=2
 E_BADARGS=65
 

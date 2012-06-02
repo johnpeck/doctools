@@ -1,0 +1,48 @@
+\documentclass[10pt,letterpaper]{article}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define page layout with geometry package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+    marginratio = 1:1, % Horizontal and vertical margin ratios
+    lmargin = 1in,
+    paper=letterpaper, % For US Letter size
+    landscape = false
+    ]
+    {geometry}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Other packages to include
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% graphicx
+% Provides \includegraphics for including postscript figures
+\usepackage[dvips]{graphicx}
+
+% multicol
+% Provides better support for two-column text
+\usepackage{multicol}
+
+% calc
+% Provides support for math with dimensions
+\usepackage{calc}
+
+% listings
+% Provides support for pretty-printing code
+\usepackage{listings}
+
+% ifthen
+% Provides support for \ifthenelse statements
+\usepackage{ifthen}
+
+% color
+% Provides support for colored text
+\usepackage{color}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The bibliography style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{doctools/latex/IEEEtran}

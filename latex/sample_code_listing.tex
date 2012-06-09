@@ -1,0 +1,33 @@
+% listings
+% Provides support for pretty-printing code
+\usepackage{listings}
+
+
+
+% Listing showing the array of command structures defining the recognized
+% command set.
+\lstset{language=C}
+\begin{lstlisting}[float, % Allows this listing to be a latex float
+                   frame=single,
+                   caption={Defining the command set with an array of
+                            command structures.},
+                   label=lst:cmdarray
+                  ]
+/* An array of command_structs will contain our remote commands */
+struct command_struct command_array[] ={
+    // The junk function
+    {"junk", // Name
+    "hex", // Argument type
+    2, // Maximum number of characters in argument
+    &junkfunc,
+    "Some junk"},
+    // The crap function
+    {"crap",
+    "none",
+    0,
+    &crapfunc,
+    "Some crap"},
+    // End of table indicator.  Must be last.
+    {"","",0,0,""}
+};
+\end{lstlisting}

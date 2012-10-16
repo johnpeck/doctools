@@ -13,6 +13,15 @@
     {geometry}
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some new float styles with float package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float}
+
+\floatstyle{plain} % Define the listing float
+\newfloat{listing}{th}{lop}
+\floatname{listing}{Listing}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Other packages to include
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -31,6 +40,21 @@
 % listings
 % Provides support for pretty-printing code
 \usepackage{listings}
+
+% ifthen
+% Provides support for \ifthenelse statements
+\usepackage{ifthen}
+
+% color
+% Provides support for colored text
+\usepackage{color}
+
+% setspace
+% Provides the \doublespacing command
+\usepackage{setspace}
+
+
+
 
 
 

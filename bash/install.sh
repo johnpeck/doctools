@@ -27,4 +27,8 @@ cp fig2dxf.sh "/usr/local/bin"
 echo "Copied fig2dxf.sh to /usr/local/bin."
 cp startxfig.sh "/usr/local/bin"
 echo "Copied startxfig.sh to /usr/local/bin."
+cp code2fig.sh "/usr/local/bin"
+echo "Copied code2fig.sh to /usr/local/bin."
+cp txt2fig.pl "/usr/local/bin"
+echo "Copied txt2fig.pl to /usr/local/bin."
 

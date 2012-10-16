@@ -7,17 +7,17 @@
 set -e # bash should exit the script if any statement returns a non-true 
        #return value
 thisdir="$PWD"
-xfigdir="$PWD/../xfig" # Where my xfig figures are sourced from
-xfigdest="/usr/local/share/docxfig" # Where the figures will be copied to
+xfigdir="../xfig" # Where my xfig figures are sourced from
+xfigdest="/usr/local/share/docxfig/" # Where the figures will be copied to
 
 if [ ! -d "$xfigdest" ]; then
-    	mkdir "$xfigdest"
-	echo "Created xfig figure library at" "$xfigdest"
+      mkdir -p "$xfigdest"
+      echo "Created xfig figure library at" "$xfigdest"
 fi
 
 if [ -d "$xfigdest" ]; then
-	cp --recursive "$xfigdir/." "$xfigdest"
-	echo "Copied xfig figure libraries to" "$xfigdest"
+      cp -R "$xfigdir/." "$xfigdest"
+      echo "Copied xfig figure libraries to" "$xfigdest"
 fi
 cp txt2pdf.sh "/usr/local/bin"
 echo "Copied txt2pdf.sh to /usr/local/bin."

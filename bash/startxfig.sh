@@ -7,7 +7,7 @@
 thisdir="$PWD"
 # Location of my personal xfig libraries is symbolically linked to
 # /usr/local/share/xfig after running the install script in bash.
-libstr=/usr/local/share/docxfig
+libstr="/usr/local/share/docxfig"
 if [ -z "$1" ] 
 then
 	xfig -library_dir "$libstr" \

@@ -2,7 +2,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Packages to include
+% Packages to include
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{multind}        % For adding multiple indexes
 \usepackage{multicol}       % For making more than two columns of index
@@ -17,7 +17,6 @@
 \usepackage{amsmath}        %Allows use of \text to get text in math mode
 \usepackage{gensymb}        %Allows use of \celsius symbol
 \usepackage{multirow}       %Allows for table data to span multiple rows
-\usepackage{moreverb}       %Makes including Matlab code easier
 \usepackage{keystroke}      %For illustrating front panel keys
 \usepackage{calc}           %For doing math with dimensions
 \usepackage[electronic,geometry]{ifsym}         %For timing symbols like falling and rising edges
@@ -32,10 +31,10 @@
 \usepackage{varioref}       % Allows page references like "this page"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Geometry package to simplify defining margins and paper
+% Geometry package to simplify defining margins and paper
 %
-%The dvips driver option writes the paper size to a variable read by xdvi.
-%Options can be set with arguments to \usepackage or the \geometry macro
+% The dvips driver option writes the paper size to a variable read by xdvi.
+% Options can be set with arguments to \usepackage or the \geometry macro
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[dvips]{geometry}        %Lets xdvi figure out paper size
     \geometry{paper=letterpaper}    %Sets letter size
@@ -44,7 +43,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Define lengths
+% Define lengths
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\setlength{\topmargin}{-.1in}
 \setlength{\headheight}{.2in}%page header height
@@ -75,21 +74,21 @@
 \newlength{\numheight}
 
 
-%Width of "trap" label for extra information warnings
+% Width of "trap" label for extra information warnings
 \newlength{\warnwidth}
 \setlength{\warnwidth}{2cm}
 
-%Width of sideby figures describing front panel features
+% Width of sideby figures describing front panel features
 \newlength{\sidefigwidth}
 \setlength{\sidefigwidth}{6cm}
 
-%Width of text for sideby figures
+% Width of text for sideby figures
 \newlength{\sidetextwidth}
 \setlength{\sidetextwidth}{9cm}
 
 \setlength{\unitlength}{1cm}
 
-%Width of column containing remote commands
+% Width of column containing remote commands
 \newlength{\cmdwidth}
 \setlength{\cmdwidth}{4cm}
 
@@ -112,30 +111,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set counters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{totalnumber}{5}%Maximum number of floats on a page
+\setcounter{totalnumber}{5} % Maximum number of floats on a page
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Define the fancy page styles
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% normal page style
 \fancypagestyle{normal}{
-    \lhead{\nouppercase \leftmark}
-    \rhead{\nouppercase \rightmark}
-    \rfoot{\today}
-    \cfoot{\thepage}
+    % The rules at the page top and bottom
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0.4pt}
-}%End of the normal page style definition
-%*********uncomment this to put the SRS logo on************
-%\lfoot{
-%\begin{minipage}[t]{3in}
-%\scalebox{1}
-%{
-%\includegraphics*{srs_long.ps}
-%}
-%\end{minipage}
-%}
+    \lhead{\nouppercase \leftmark}
+    \rhead{\nouppercase \rightmark}
+    \rfoot{
+        \begin{minipage}[t]{3in}
+            \hfill \textsl{EC301} Potentiostat/Galvanostat/ZRA
+        \end{minipage}
+    }
+    \cfoot{\thepage}
+    % Add the SRS logo to the lower left corner
+    \lfoot{
+        \begin{minipage}[c]{3in}
+            \includegraphics[clip,scale=0.5]{raster/srs_logo}
+        \end{minipage}
+    }
+} % End of normal page definition
+
 %*********************************************************
 %\lfoot{kick me}
 %\rfoot{\today}

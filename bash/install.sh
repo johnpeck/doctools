@@ -7,18 +7,37 @@
 set -e # bash should exit the script if any statement returns a non-true 
        #return value
 thisdir="$PWD"
-xfigdir="../xfig" # Where my xfig figures are sourced from
-xfigdest="/usr/local/share/docxfig/" # Where the figures will be copied to
+XFIGDIR="../xfig" # Where my xfig figures are sourced from
+XFIGDEST="/usr/local/share/docxfig/" # Where the figures will be copied to
+# My inkscape files
+MYINK="../inkscape"
 
-if [ ! -d "$xfigdest" ]; then
-      mkdir -p "$xfigdest"
-      echo "Created xfig figure library at" "$xfigdest"
+# Where inkscape stores its configuration files
+INKCONFIG="/home/john/.config/inkscape"
+
+# Create xfig figure libraries
+if [ ! -d "$XFIGDEST" ]; then
+      mkdir -p "$XFIGDEST"
+      echo "Created xfig figure library at" "$XFIGDEST"
 fi
 
-if [ -d "$xfigdest" ]; then
-      cp -R "$xfigdir/." "$xfigdest"
-      echo "Copied xfig figure libraries to" "$xfigdest"
+if [ -d "$XFIGDEST" ]; then
+      cp -R "$XFIGDIR/." "$XFIGDEST"
+      echo "Copied xfig figure libraries to" "$XFIGDEST"
 fi
+
+# Copy inkscape templates
+if [ ! -d "$INKCONFIG/templates" ]; then
+      mkdir -p "$INKCONFIG/templates"
+      echo "Created inkscape template directory at" "$INKCONFIG/templates"
+fi
+
+if [ -d "$INKCONFIG/templates" ]; then
+      cp -R "$MYINK/templates/"* "$INKCONFIG/templates"
+      echo "Copied inkscape templates to" "$INKCONFIG/templates"
+fi
+
+
 cp txt2pdf.sh "/usr/local/bin"
 echo "Copied txt2pdf.sh to /usr/local/bin."
 cp pdfpage.sh "/usr/local/bin"

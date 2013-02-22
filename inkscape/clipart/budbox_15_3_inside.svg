@@ -10,14 +10,18 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="148.46985"
-   height="41.408424"
+   width="544.56317"
+   height="454.5011"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="usb_b_cable_end.svg">
+   sodipodi:docname="budbox_15_3_inside.svg">
   <defs
      id="defs4">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5203"
+       is_visible="true" />
     <linearGradient
        id="linearGradient3776"
        osb:paint="gradient">
@@ -37,6 +41,10 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5203-5"
+       is_visible="true" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -45,9 +53,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="89.27284"
-     inkscape:cy="37.227657"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="91.517574"
+     inkscape:cy="382.21778"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -71,8 +79,8 @@
        snapvisiblegridlinesonly="true"
        spacingx="0.01in"
        spacingy="0.01in"
-       originx="-2.8951312in"
-       originy="-3.3949844in" />
+       originx="-2.8701312in"
+       originy="-3.3699964in" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -90,5 +98,33 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-260.56181,-705.40516)" />
+     transform="translate(-258.31181,-294.56141)">
+    <g
+       id="g5245">
+      <rect
+         y="297.08136"
+         x="260.82962"
+         height="449.46442"
+         width="539.30298"
+         id="rect4691"
+         style="fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.53559405;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cccc"
+         transform="translate(260.56181,705.40516)"
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 33.75,41.408424 -33.75,0 0,-450.000004 33.75,0"
+         inkscape:path-effect="#path-effect5203"
+         id="path5201"
+         d="m 33.75,41.408424 -33.75,0 0,-450.000004 33.75,0"
+         style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 766.86783,746.81362 33.75,0 0,-450.00004 -33.75,0"
+         inkscape:path-effect="#path-effect5203-5"
+         id="path5201-4"
+         d="m 766.86783,746.81362 33.75,0 0,-450.00004 -33.75,0"
+         style="fill:none;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+  </g>
 </svg>

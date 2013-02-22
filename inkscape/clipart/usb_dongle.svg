@@ -10,12 +10,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="148.46985"
-   height="41.408424"
+   width="280.31262"
+   height="149.36705"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="usb_b_cable_end.svg">
+   sodipodi:docname="New document 9">
   <defs
      id="defs4">
     <linearGradient
@@ -45,9 +45,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="89.27284"
-     inkscape:cy="37.227657"
+     inkscape:zoom="1.979899"
+     inkscape:cx="171.10633"
+     inkscape:cy="88.794498"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -71,8 +71,8 @@
        snapvisiblegridlinesonly="true"
        spacingx="0.01in"
        spacingy="0.01in"
-       originx="-2.8951312in"
-       originy="-3.3949844in" />
+       originx="-2.8902768in"
+       originy="-3.3651773in" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -90,5 +90,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-260.56181,-705.40516)" />
+     transform="translate(-260.12491,-600.12918)">
+    <path
+       style="fill:#777777;fill-opacity:1;stroke:#000000;stroke-width:0.89999998;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 260.56181,636.56358 c 0,0 88.97435,-27.92093 135,-33.55521 44.56129,-5.45502 134.68182,0 134.68182,0 0,0 9.7778,46.97664 9.75637,71.35381 -0.0214,24.37718 -9.75637,72.25662 -9.75637,72.25662 0,0 -90.12145,5.46256 -134.68182,0 C 349.59965,740.9844 260.7566,713.06358 260.7566,713.06358 z"
+       id="rect4151"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csczcscc" />
+  </g>
 </svg>

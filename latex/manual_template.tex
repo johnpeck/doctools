@@ -125,18 +125,9 @@
     \renewcommand{\footrulewidth}{0.4pt}
     \lhead{\nouppercase \leftmark}
     \rhead{\nouppercase \rightmark}
-    \rfoot{
-        \begin{minipage}[t]{3in}
-            \hfill \textsl{EC301} Potentiostat/Galvanostat/ZRA
-        \end{minipage}
-    }
-    \cfoot{\thepage}
-    % Add an image to the lower left corner
-    \lfoot{
-        \begin{minipage}[c]{3in}
-            \includegraphics[clip,scale=0.1]{}
-        \end{minipage}
-    }
+    \rfoot{\normalrightfoot{}}
+    \cfoot{\thepage{}}
+    \lfoot{\normalleftfoot{}}
 } % End of normal page definition
 
 %*********************************************************

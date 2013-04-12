@@ -8,16 +8,20 @@
         \end{minipage}
 }%end wksentry
 
-% cwksentry
-% Another nice way to put data in a cell.  Centers the text in a minipage.
+
+% cwksentry() 
+% 
+% Another nice way to put data in a cell.  Centers the text
+% in a minipage.
+%  
 % Usage: \cwksentry{<cell width>}{<Text in cell>}
 \newcommand{\cwksentry}[2]{
-        \begin{minipage}[c][\totalheight+.5cm][c]{#1}
-            \begin{center}
-            #2
-            \end{center}
-        \end{minipage}
-}%end cwksentry
+  \begin{minipage}[c][\totalheight+.5cm][c]{#1}
+    \begin{center}
+      #2
+    \end{center}
+  \end{minipage}
+} % end cwksentry
 
 % Shade a cell in a table
 \newcommand{\graycell}[0]{\cellcolor[gray]{.8}}
@@ -58,8 +62,11 @@
 \end{center}
 }% end usercmd
 
-% Typewriter formatted text inside a box.  Use this to draw up any kind
-% of terminal communication with any kind of prompt
+% boxcmd() 
+%
+% Typewriter formatted text inside a box.  Use this to draw up any
+% kind of terminal communication with any kind of prompt
+%
 % Usage: \boxcmd{<text>}
 \newcommand{\boxcmd}[1]{
 \vspace{-.5\baselineskip}
@@ -73,20 +80,39 @@
 \end{center}
 }% end \boxcmd
 
-% boxtext
+% boxtext()
+% 
 % Simply text inside of a box of width \textwidth.
+%
 % Usage: \boxtext{<text>}
 \newcommand{\boxtext}[1]{
-\vspace{-.5\baselineskip}
-\begin{center}
+  \vspace{-.5\baselineskip}
+  \begin{center}
     \singlespacing
     \vspace{-\baselineskip}
     \begin{boxedminipage}[t]{\textwidth}
-        \noindent
-        {#1}
+      \noindent
+      {#1}
     \end{boxedminipage}
-\end{center}
+  \end{center}
 }% end \boxtext
+
+% onecodeline()
+%
+% Uses \path from the url package to verbatim-print input all on one
+% line.  This is handy if you have a long line of input for verbatim
+% that you'd like to put on two lines in your editor, but not in the output.
+\newcommand{\onecodeline}[1]{
+  \vspace{-.5\baselineskip}
+  \begin{center}
+    \colorbox{codegray}{
+      \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+        \path{#1}
+      \end{minipage}
+    }
+  \end{center}
+}
+
 
 % Show a snippet of a file's contents in a box with the filename as
 % the title.  The filename is shaded.

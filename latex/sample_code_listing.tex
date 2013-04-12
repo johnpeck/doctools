@@ -31,3 +31,18 @@ struct command_struct command_array[] ={
     {"","",0,0,""}
 };
 \end{lstlisting}
+
+% An inline listing (no caption, not floating)
+\begin{center}
+  \begin{minipage}[c]{\textwidth - \tabcolsep}
+    \lstset{language=c,frame=single,backgroundcolor=\color{codegray}}
+    \begin{lstlisting}
+      for(;;) {
+        /* Process the parse buffer to look for commands loaded with the
+           received character ISR. 
+        */
+        process_pbuffer( recv_cmd_state_ptr, command_array );
+      }// end main for loop  
+    \end{lstlisting}
+  \end{minipage}
+\end{center}

@@ -7,27 +7,31 @@
 \usepackage{multind}        % For adding multiple indexes
 \usepackage{multicol}       % For making more than two columns of index
 \usepackage{fancyhdr}
-\usepackage{setspace}       %allow the use of double spacing
+\usepackage{setspace}       % allow the use of double spacing
 \usepackage[dvips]{graphicx,color}
-\usepackage{textcomp}       %allows the use of special symbols
-\usepackage{array}          %allows the use of different column types in tables
-\usepackage{longtable}      %allows tables that span multiple pages
-\usepackage{verbatim}       %allow the use of \verbatiminput
-\usepackage{amssymb}        %Allows use of special math symbols, like \square
-\usepackage{amsmath}        %Allows use of \text to get text in math mode
-\usepackage{gensymb}        %Allows use of \celsius symbol
-\usepackage{multirow}       %Allows for table data to span multiple rows
-\usepackage{keystroke}      %For illustrating front panel keys
-\usepackage{calc}           %For doing math with dimensions
-\usepackage{subfigure}      %For adding figures within figures
-\usepackage{rotating}       %For sidewaystable and sidewaysfigure
-\usepackage{wrapfig}        %For placing figures at the side of a page
-\usepackage{boxedminipage}  %Just what it sounds like
+\usepackage{textcomp}       % allows the use of special symbols
+\usepackage{array}          % allows the use of different column types in tables
+\usepackage{longtable}      % allows tables that span multiple pages
+\usepackage{verbatim}       % allow the use of \verbatiminput
+\usepackage{amssymb}        % Allows use of special math symbols, like \square
+\usepackage{amsmath}        % Allows use of \text to get text in math mode
+\usepackage{gensymb}        % Allows use of \celsius symbol
+\usepackage{multirow}       % Allows for table data to span multiple rows
+\usepackage{keystroke}      % For illustrating front panel keys
+\usepackage{calc}           % For doing math with dimensions
+\usepackage{subfigure}      % For adding figures within figures
+\usepackage{rotating}       % For sidewaystable and sidewaysfigure
+\usepackage{wrapfig}        % For placing figures at the side of a page
+\usepackage{boxedminipage}  % Just what it sounds like
 \usepackage[subfigure]{tocloft}    % For formatting table of contents
 \usepackage{hhline}         % For more flexible lines in tables
-\usepackage{capt-of}    % Allows captions not just for floats
-\usepackage{nbaseprt}  % For formatting numbers using \nbaseprint
+\usepackage{capt-of}        % Allows captions not just for floats
+\usepackage{nbaseprt}       % For formatting numbers using \nbaseprint
 \usepackage{varioref}       % Allows page references like "this page"
+\usepackage{listings}       % Provides \lstlisting for code formatting
+\usepackage[obeyspaces]{url}% Provides \path for verbatim with line breaks
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Geometry package to simplify defining margins and paper
@@ -41,9 +45,11 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% --------------------------------------------------------------------
 % Define lengths
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------------------
 %\setlength{\topmargin}{-.1in}
 \setlength{\headheight}{.2in}%page header height
 \setlength{\headsep}{.25in}%space between header and text
@@ -52,7 +58,8 @@
 \renewcommand{\textfraction}{0.05}  %minimum fraction of page for text
 \renewcommand{\topfraction}{0.95}   %max fraction of page for floats at top
 \renewcommand{\bottomfraction}{0.95}    %max fraction of page for floats at bottom
-\renewcommand{\floatpagefraction}{0.95} %max fraction of floatpage that should have floats
+% max fraction of floatpage that should have floats
+\renewcommand{\floatpagefraction}{0.95}
 
 % \tabindent
 % Add indentation for items in a table.  I sometimes need this when trying
@@ -105,6 +112,20 @@
 % Set the space for the attribute column in the spec pages, where the
 % specifications are given as attribute <space> value
 \newcommand{\specitemwidth}{3in}
+
+
+
+% --------------------------------------------------------------------
+% Define colors
+% --------------------------------------------------------------------
+
+\definecolor{codegray}{gray}{0.9} % Shading for codeboxes
+
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

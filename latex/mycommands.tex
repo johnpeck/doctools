@@ -114,8 +114,13 @@
 }
 
 
+% filesnip()
+%
 % Show a snippet of a file's contents in a box with the filename as
 % the title.  The filename is shaded.
+%
+% Requires: colortbl
+%
 % Usage: \filesnip{<filename>}{<snippet>}
 \newcommand{\filesnip}[2]{
 \begin{center}
@@ -128,13 +133,12 @@
         \end{minipage}\\
         \begin{minipage}[c]{\textwidth - 2\tabcolsep}
             \vspace{0.5\baselineskip}
-            \ldots
-            \vspace{0.5\baselineskip} \\
+            $\cdots$ \\
             \begin{minipage}[c]{\textwidth - 2\tabcolsep}
                 #2
             \end{minipage}
-            \vspace{0.5\baselineskip} \\
-            \ldots \\
+            $\cdots$\\
+            \vspace{-0.5\baselineskip}
         \end{minipage}\\
     \hline
     \end{tabular}

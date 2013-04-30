@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#
 # spellgen.py
 #     
 # Generates the spellcheck.sh file using tex files pulled into a latex
@@ -16,12 +18,14 @@ import os
 import sys # For handling the command line argument
 import subprocess # For shell commands
 
+thisdir = os.path.dirname(os.path.realpath(__file__))
 # -------------------------- Begin configuration ---------------------
 
 
 logfile = sys.argv[1] # log file
 dictfile = sys.argv[2] # dictionary file
-tplfile = './spellcheck.tpl' # Template file for the shell script
+tplfile = thisdir + '/spellcheck.tpl' 
+# Template file for the shell script
 shlfile = os.getcwd() + '/spellcheck.sh' # Shell script file
 
 
@@ -29,27 +33,33 @@ shlfile = os.getcwd() + '/spellcheck.sh' # Shell script file
 # -------------------------- End configuration -----------------------
 
 
-""" loglist()
-    Returns a list of tex files included in a document by parsing the
-    log file (logfile) defined in the configuration. """
+# loglist()
+#
+# Returns a list of tex files included in a document by parsing the
+# log file (logfile)
 def loglist():
     if (not os.access(logfile,os.F_OK)):
         print ('loglist: could not find the log file ' + logfile)
         return
-    inclist = []
-    fin = open(logfile,'r')
-    rawfile = fin.read()
-    for line in rawfile.split('\n'):
-        if line.find('./') != -1:
-            for item in line.split('/'):
-                if item.find('.tex') != -1:
-                    item = item.strip('*')
-                    itembase = item.split('.')[0]
-                    texfile = itembase + '.tex'
-                    inclist.append(texfile)
-    fin.close()
+    else:
+        inclist = []
+        fin = open(logfile,'r')
+        rawfile = fin.read()
+        for line in rawfile.split('\n'):
+            print(line)
+            if line.find('./') != -1:
+                # Only return tex files in the document root
+                print(line)
+                if ( len(line.split('/')) == 2 ):
+                    for item in line.split('/'):
+                        if item.find('.tex') != -1:
+                            item = item.strip('*')
+                            itembase = item.split('.')[0]
+                            texfile = itembase + '.tex'
+                            inclist.append(texfile)
+                            fin.close()
     return inclist
-    
+                            
 
 
 def main():
@@ -69,7 +79,7 @@ def main():
         for filename in texfiles:
             fot.write('aspell --mode=tex ' +
                     '--add-extra-dicts=./' + dictfile +
-                    '-c ./' + filename + '\n')
+                    ' -c ./' + filename + '\n')
         fot.close()
         
 

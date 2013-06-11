@@ -97,6 +97,23 @@
   \end{center}
 }% end \boxtext
 
+% shortboxtext()
+% 
+% Text inside a box shortened for use in an itemized environment.
+\newcommand{\shortboxtext}[1]{
+  \vspace{-.5\baselineskip}
+  \begin{flushright}
+    \singlespacing
+    \vspace{-\baselineskip}
+    \fbox{
+      \begin{minipage}[t]{\textwidth - 1cm - 2\tabcolsep }
+        \noindent
+        {#1}
+      \end{minipage}
+    }
+  \end{flushright}
+}% end \shortboxtext
+
 % onecodeline()
 %
 % Uses \path from the url package to verbatim-print input all on one

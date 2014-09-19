@@ -29,7 +29,7 @@ zsize=$(echo "scale=2; $1 / 300" | bc)
 fig2dev -L eps -Z $zsize "$2" "$epsfile"
 # Convert to png using ghostscript.
 gs -dSAFER -dBATCH -dNOPAUSE -sDEVICE=png16m -dGraphicsAlphaBits=4 \
-    -sOutputFile="$pngfile" -r300 "$epsfile"
+    -dTextAlphaBits=4 -sOutputFile="$pngfile" -r300 "$epsfile"
 # Finally, use Imagemagick to trim the image.  Note that all resizing
 # should be done in the fig2dev step to preserve image resolution.
 convert "$pngfile" -trim +repage "$pngfile"

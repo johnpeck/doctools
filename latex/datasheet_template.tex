@@ -34,6 +34,7 @@
 \usepackage{dirtree} % For drawing file directory trees
 
 
+
 %----------------------- Define printable area ------------------------
 
 \usepackage[dvips]{geometry}        %Lets xdvi figure out paper size
@@ -41,11 +42,15 @@
     \geometry{top=0.5in, bottom=0.5in} % Top and bottom margins
     \geometry{includeheadfoot} % Include header and footer heights in
                                % the "total body" (text area).
-    \geometry{head=0.7in} % Width of header.  The logo should fit in
+    \geometry{head=0.8in} % Width of header.  The logo should fit in
                           % this width.
 
 
-
+%---------------------------- Dates and times -------------------------
+\usepackage{datetime}
+\newdateformat{noday}{%
+  \monthname[\THEMONTH], \THEYEAR
+}
 
 
 % --------------------------------------------------------------------

@@ -1,0 +1,19 @@
+#!/bin/bash
+# Name: swgrep
+#
+# Search through SwipeSense code
+#
+# Usage: swgrep <pattern>
+
+set -e # bash should exit the script if any statement returns a
+       # non-true return value
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: swgrep <pattern>"
+    exit 64
+fi
+ 
+# Search in both .h and .c and .cpp files
+grep --color=always -irC5 "$1" --include "*.cpp" --include "*.h"
+
+

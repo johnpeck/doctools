@@ -54,4 +54,9 @@ cp fig2png.sh "/usr/local/bin"
 echo "Copied fig2png.sh to /usr/local/bin."
 cp bashmarks.sh "/usr/local/bin"
 echo "Copied bashmarks.sh to /usr/local/bin."
+cp swgrep "/usr/local/bin"
+echo "Copied swgrep to /usr/local/bin."
+cp eps2png.sh "/usr/local/bin"
+echo "Copied eps2png.sh to /usr/local/bin"
+
 

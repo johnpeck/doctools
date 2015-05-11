@@ -58,5 +58,8 @@ cp swgrep "/usr/local/bin"
 echo "Copied swgrep to /usr/local/bin."
 cp eps2png.sh "/usr/local/bin"
 echo "Copied eps2png.sh to /usr/local/bin"
+cp gerbsplode.sh "/usr/local/bin"
+chmod a+x /usr/local/bin/gerbsplode.sh
+echo "Copied gerbsplode.sh to /usr/local/bin"
 
 

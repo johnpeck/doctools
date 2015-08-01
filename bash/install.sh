@@ -61,5 +61,8 @@ echo "Copied eps2png.sh to /usr/local/bin"
 cp gerbsplode.sh "/usr/local/bin"
 chmod a+x /usr/local/bin/gerbsplode.sh
 echo "Copied gerbsplode.sh to /usr/local/bin"
+cp svg2png.sh "/usr/local/bin"
+chmod a+x /usr/local/bin/svg2png.sh
+echo "Copied svg2png.sh to /usr/local/bin"
 
 

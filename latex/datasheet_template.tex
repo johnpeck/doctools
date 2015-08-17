@@ -32,6 +32,8 @@
 \usepackage{listings}       % Provides \lstlisting for code formatting
 \usepackage[obeyspaces]{url}% Provides \path for verbatim with line breaks
 \usepackage{dirtree} % For drawing file directory trees
+\usepackage{lastpage}       % Page numbers like 1 of 6
+\usepackage{capt-of}        % Captions for figures or tables in minipages
 
 
 
@@ -51,7 +53,9 @@
 \newdateformat{noday}{%
   \monthname[\THEMONTH], \THEYEAR
 }
-
+\newdateformat{thisyear}{%
+  \THEYEAR
+}
 
 % --------------------------------------------------------------------
 % Define lengths
@@ -67,8 +71,6 @@
 % to make an itemized list where each subitem is inside its own table cell
 \newcommand{\tabindent}{\hspace*{5mm}} 
 
-\newlength{\pad}
-\setlength{\pad}{.5cm}
 
 % Minimum height of integer parameter boxes in tables.  Setting this at
 % the beginning of a table provides a way to keep number boxes the same
@@ -150,22 +152,22 @@
     \lhead{\firstlefthead{}}
     \rhead{\firstrighthead{}}
     \rfoot{\firstrightfoot{}}
-    \cfoot{}
+    \cfoot{\thepage\ of \pageref{LastPage}}
     \lfoot{\firstleftfoot{}}
 }
 
-
-
-
 % normal page style
+%
+% \normallefthead, \normalrighthead, \normalrightfoot, \normalleftfoot
+% commands must be defined in the document.
 \fancypagestyle{normal}{
     % The rules at the page top and bottom
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0.4pt}
-    \lhead{\nouppercase \leftmark}
-    \rhead{\nouppercase \rightmark}
+    \lhead{\normallefthead{}}
+    \rhead{\normalrighthead{}}
     \rfoot{\normalrightfoot{}}
-    \cfoot{\thepage{}}
+    \cfoot{\thepage\ of \pageref{LastPage}}
     \lfoot{\normalleftfoot{}}
 } % End of normal page definition
 

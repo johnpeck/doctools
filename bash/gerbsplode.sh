@@ -1,26 +1,16 @@
 #!/bin/bash
-# Name: gerbsplode.sh
+# Name: startxrandr.sh
 #
-# Unzips a set of gerber files and fires up gerbv to view them.
+# Sets up displays
 #
-# Usage: gerbsplode.sh <zipped up gerbers>
+# Usage: startxrandr.sh
 
 set -e # bash should exit the script if any statement returns a
        # non-true return value
 
 if [ "$#" -ne 1 ]; then
-    echo "Usage: gerbsplode.sh <zipped up gerbers>"
+    echo "Usage: startxrandr.sh"
     exit 64
 fi
 
-# Remove temporary directory
-rm -rf gerbtemp
-
-# Create temporary directory and unzip files into it
-mkdir gerbtemp
-cp "$1" gerbtemp
-cd gerbtemp
-unzip "$1" 
-
-# Fire up gerbv
-gerbv * &
+xrandr --auto --output DP2 --mode 1920x1080+0+0 --left-of eDP1

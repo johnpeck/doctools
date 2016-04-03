@@ -12,6 +12,9 @@ XFIGDEST="/usr/local/share/docxfig/" # Where the figures will be copied to
 # My inkscape files
 MYINK="../inkscape"
 
+# Where my personal scripts will go
+scriptdir="/usr/local/bin"
+
 # Where inkscape stores its configuration files
 INKCONFIG="/home/john/.config/inkscape"
 
@@ -67,4 +70,7 @@ echo "Copied svg2png.sh to /usr/local/bin"
 cp wmf2png.sh "/usr/local/bin"
 chmod a+x /usr/local/bin/wmf2png.sh
 echo "Copied wmf2png.sh to /usr/local/bin"
-
+scriptname=fig2pcb
+cp $scriptname.sh $scriptdir
+chmod a+x $scriptdir/$scriptname.sh
+echo "Copied $scriptname.sh to $scriptdir"

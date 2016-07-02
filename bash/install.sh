@@ -74,3 +74,11 @@ scriptname=fig2pcb
 cp $scriptname.sh $scriptdir
 chmod a+x $scriptdir/$scriptname.sh
 echo "Copied $scriptname.sh to $scriptdir"
+scriptname=scrubtext
+cp $scriptname.sh $scriptdir
+chmod a+x $scriptdir/$scriptname.sh
+echo "Copied $scriptname.sh to $scriptdir"
+scriptname=onlylines
+cp $scriptname.sh $scriptdir
+chmod a+x $scriptdir/$scriptname.sh
+echo "Copied $scriptname.sh to $scriptdir"

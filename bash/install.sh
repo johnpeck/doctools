@@ -82,3 +82,7 @@ scriptname=onlylines
 cp $scriptname.sh $scriptdir
 chmod a+x $scriptdir/$scriptname.sh
 echo "Copied $scriptname.sh to $scriptdir"
+scriptname=docsurf
+cp $scriptname $scriptdir
+chmod a+x $scriptdir/$scriptname
+echo "Copied $scriptname to $scriptdir"

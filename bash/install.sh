@@ -61,9 +61,9 @@ cp swgrep "/usr/local/bin"
 echo "Copied swgrep to /usr/local/bin."
 cp eps2png.sh "/usr/local/bin"
 echo "Copied eps2png.sh to /usr/local/bin"
-cp gerbsplode.sh "/usr/local/bin"
-chmod a+x /usr/local/bin/gerbsplode.sh
-echo "Copied gerbsplode.sh to /usr/local/bin"
+# cp gerbsplode.sh "/usr/local/bin"
+# chmod a+x /usr/local/bin/gerbsplode.sh
+# echo "Copied gerbsplode.sh to /usr/local/bin"
 cp svg2png.sh "/usr/local/bin"
 chmod a+x /usr/local/bin/svg2png.sh
 echo "Copied svg2png.sh to /usr/local/bin"
@@ -83,6 +83,10 @@ cp $scriptname.sh $scriptdir
 chmod a+x $scriptdir/$scriptname.sh
 echo "Copied $scriptname.sh to $scriptdir"
 scriptname=docsurf
+cp $scriptname $scriptdir
+chmod a+x $scriptdir/$scriptname
+echo "Copied $scriptname to $scriptdir"
+scriptname=ttytitle.sh
 cp $scriptname $scriptdir
 chmod a+x $scriptdir/$scriptname
 echo "Copied $scriptname to $scriptdir"

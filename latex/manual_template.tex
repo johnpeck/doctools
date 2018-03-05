@@ -1,6 +1,5 @@
 \documentclass[10pt,letterpaper]{article}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages to include
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,12 +35,10 @@
 \usepackage{xspace}         % Intelligently insert space after
                             % trademark symbols
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Hyperref %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[colorlinks = true,
             linkcolor = blue,
             urlcolor = blue]{hyperref}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Geometry package to simplify defining margins and paper
@@ -52,7 +49,6 @@
 \usepackage[dvips]{geometry}        %Lets xdvi figure out paper size
     \geometry{paper=letterpaper}    %Sets letter size
     \geometry{margin=1in}       %1 inch margins all around
-
 
 % --------------------------------------------------------------------
 % Define lengths
@@ -71,7 +67,7 @@
 % \tabindent
 % Add indentation for items in a table.  I sometimes need this when trying
 % to make an itemized list where each subitem is inside its own table cell
-\newcommand{\tabindent}{\hspace*{5mm}} 
+\newcommand{\tabindent}{\hspace*{5mm}}
 
 \newlength{\pad}
 \setlength{\pad}{.5cm}
@@ -85,7 +81,6 @@
 % The height of numbers (or characters without newlines).  Use this to
 % calculate offsets for centering numbers or characters in boxes.
 \newlength{\numheight}
-
 
 % Width of "trap" label for extra information warnings
 \newlength{\warnwidth}
@@ -120,38 +115,25 @@
 % specifications are given as attribute <space> value
 \newcommand{\specitemwidth}{3in}
 
-
-
 % --------------------------------------------------------------------
 % Define colors
 % --------------------------------------------------------------------
 
 \definecolor{codegray}{gray}{0.9} % Shading for codeboxes
 
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set counters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{totalnumber}{5} % Maximum number of floats on a page
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Define the fancy page styles
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%% Fancy page styles %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % normal page style
 \fancypagestyle{normal}{
     % The rules at the page top and bottom
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0.4pt}
-    \lhead{\nouppercase \leftmark}
+    \lhead{}
     \rhead{\nouppercase \rightmark}
     \rfoot{\normalrightfoot{}}
     \cfoot{\thepage{}}
@@ -183,18 +165,12 @@
     \renewcommand{\footrulewidth}{0.4pt}
 }%End of references fancy page style definition
 
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format footnotes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\thefootnote}{\arabic{footnote}}
 %\renewcommand{\thefootnote}{\fnsymbol{footnote}}   %For symbols
 \renewcommand{\thempfootnote}{\arabic{mpfootnote}}  %For footnotes in minipages
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %The bibliography style

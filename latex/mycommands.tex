@@ -250,17 +250,33 @@
 % Puts a picture reminding somebody of a pc next to some text.
 % Usage: \pcnote{<Text in note>}
 \newcommand{\pcnote}[1]{
-    \noindent \\
-    \begin{tabular}{lc}
+  \noindent \\
+  \begin{tabular}{lc}
     \begin{minipage}[c][\height+1cm][c]{2cm}
-        \includegraphics[clip,scale=0.8]{doctools/latex/icons/terminal.eps}
+      \includegraphics[clip,scale=0.8]{doctools/latex/icons/terminal.eps}
     \end{minipage}
     &
-    \begin{minipage}[c][\height+1cm][c]{\textwidth-2.5cm}
-    #1
-    \end{minipage}
-    \end{tabular}
+      \begin{minipage}[c][\height+1cm][c]{\textwidth-2.5cm}
+        #1
+      \end{minipage}
+  \end{tabular}
 }
+
+% Make a note next to a sad face
+\newcommand{\sadnote}[1]{
+  \noindent \\
+  \begin{tabular}{lc}
+    \begin{minipage}[c][\height+1cm][c]{2cm}
+      \includegraphics[clip,scale=1.7]{doctools/latex/icons/face-sad.eps}
+    \end{minipage}
+    &
+      \begin{minipage}[c][\height+1cm][c]{\textwidth-2.5cm}
+        #1
+      \end{minipage}
+  \end{tabular}
+}
+
+  
 
 % Add a filename to a caption if the document is marked as a draft
 % Need to add the line: \newcommand{\isdraft}{1} in the main document
@@ -403,8 +419,6 @@
 % Pretty formatting for writing I2S bus
 \newcommand{\itwos}{I$^2$S}
 
-% This will get "renewed" all the time for table captions
-\newcommand{\mycaption}{}
 
   
 

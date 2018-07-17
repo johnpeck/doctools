@@ -119,6 +119,7 @@ strzero = num2str(end_ratio);
 strone = 'Increment ratios better than 0.2% from ';
 disp([strone strtwo ' to ' strzero]);
 
+graphics_toolkit('gnuplot');
 
 figure(1);
 plot(alpha*potsteps,ratio_nom,'@',alpha*potsteps,ratio_low,'@',alpha*potsteps,ratio_high,'@',alpha*potsteps,zeros(1,size(alpha,2))+bottom_ratio,';Lowest reliable setting for 0.2% accuracy;',alpha*potsteps,zeros(1,size(alpha,2))+end_ratio,';Highest reliable setting for 0.2% accuracy;');
@@ -128,7 +129,7 @@ axis([0 potsteps desired_ratio*.9 desired_ratio*1.1]);
 xlabel('Resistor position');
 ylabel('Divider ratio');
 %plot(alpha(indexes),ratio(indexes),'@');
-
+pause;
 break
 
 figure(2);

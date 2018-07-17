@@ -69,7 +69,7 @@
 %
 % Usage: \boxcmd{<text>}
 \newcommand{\boxcmd}[1]{
-\vspace{-2\baselineskip}
+\vspace{-.5\baselineskip}
 \begin{center}
     \singlespacing
     \vspace{-\baselineskip}
@@ -411,6 +411,13 @@
 \newcommand{\mfgpart}[1]
 {
   \MakeUppercase{#1}
+}
+
+% Box with a check mark inside
+%
+% https://tex.stackexchange.com/questions/16000/creating-boxed-check-mark
+\newcommand{\checkedbox}[0] {
+  $\text{\rlap{$\checkmark$}}\square$
 }
 
 % Pretty formatting for writing I2C bus

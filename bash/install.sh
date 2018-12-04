@@ -95,3 +95,7 @@ scriptname=pfix.sh
 cp $scriptname $scriptdir
 chmod a+x $scriptdir/$scriptname
 echo "Copied $scriptname to $scriptdir"
+scriptname=blogpic.sh
+cp $scriptname $scriptdir
+chmod a+x $scriptdir/$scriptname
+echo "Copied $scriptname to $scriptdir"

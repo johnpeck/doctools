@@ -46,6 +46,7 @@
 % Allows typesetting SI units
 \usepackage{siunitx}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Caption %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Provides control of caption spacing in tables and figures
@@ -149,11 +150,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% Fancy page styles %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % normal page style
+%
+% The \normallefthead and \normalrighthead commands need to be renewed
+% when you want them to change -- inside the document.  Latex doesn't
+% seem to have a good way to extract the section title.
 \fancypagestyle{normal}{
     % The rules at the page top and bottom
     \renewcommand{\headrulewidth}{0.4pt}
     \renewcommand{\footrulewidth}{0.4pt}
-    \lhead{}
+    \lhead{\normallefthead{}}
     \rhead{\nouppercase \rightmark}
     \rfoot{\normalrightfoot{}}
     \cfoot{\thepage{}}

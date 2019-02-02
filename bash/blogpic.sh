@@ -12,7 +12,7 @@ then
     echo "Usage: blogpic.sh <image file>"
 else 
     # The output filename
-    blog_pic_filename="$(echo $1|sed 's/[[:alnum:]]*/&_blog/')"
+    blog_pic_filename="$(echo $1|sed 's/[^\.]*/&_blog/')"
     # Reduce the image to be 600 pixels wide while maintaining aspect ratio
     convert -resize "600>" "$1" "$blog_pic_filename"
     echo "Output written to ""$blog_pic_filename"

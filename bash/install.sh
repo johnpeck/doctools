@@ -47,8 +47,7 @@ cp pdfpage.sh "/usr/local/bin"
 echo "Copied pdfpage.sh to /usr/local/bin."
 cp fig2dxf.sh "/usr/local/bin"
 echo "Copied fig2dxf.sh to /usr/local/bin."
-cp startxfig.sh "/usr/local/bin"
-echo "Copied startxfig.sh to /usr/local/bin."
+
 cp code2fig.sh "/usr/local/bin"
 echo "Copied code2fig.sh to /usr/local/bin."
 cp txt2fig.pl "/usr/local/bin"
@@ -95,7 +94,13 @@ scriptname=pfix.sh
 cp $scriptname $scriptdir
 chmod a+x $scriptdir/$scriptname
 echo "Copied $scriptname to $scriptdir"
+
 scriptname=blogpic.sh
+cp $scriptname $scriptdir
+chmod a+x $scriptdir/$scriptname
+echo "Copied $scriptname to $scriptdir"
+
+scriptname=startxfig.sh
 cp $scriptname $scriptdir
 chmod a+x $scriptdir/$scriptname
 echo "Copied $scriptname to $scriptdir"

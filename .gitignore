@@ -1,0 +1,14 @@
+# Ignore xfig's temporary files
+xfig/misc/*.bak
+xfig/mech/*.bak
+xfig/mech/*.stackdump
+xfig/pcb/*.bak
+xfig/schematics/*.bak
+
+# Ignore eps and png outputs from xfig
+xfig/mech/*.eps
+xfig/mech/*.png
+
+# Ignore emacs' temporary files
+latex/*~
+*~

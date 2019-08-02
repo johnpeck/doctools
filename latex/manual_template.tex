@@ -46,6 +46,10 @@
 
 % Allows typesetting SI units
 \usepackage{siunitx}
+% sisetup takes a comma-separated list of key = value pairs
+\sisetup{%
+  alsoload = synchem
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Caption %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,6 +66,24 @@
             linkcolor = blue,
             urlcolor = blue]{hyperref}
 
+%%%%%%%%%%%%%%%%%% Code listings (Listings package) %%%%%%%%%%%%%%%%%%
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{Gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{DarkGreen},
+  stringstyle=\color{Mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+            
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Geometry package to simplify defining margins and paper
 %

@@ -28,7 +28,7 @@
 \usepackage{capt-of}        % Allows captions not just for floats
 \usepackage{nbaseprt}       % For formatting numbers using \nbaseprint
 \usepackage{varioref}       % Allows page references like "this page"
-\usepackage{listings}       % Provides \lstlisting for code formatting
+
 \usepackage[obeyspaces]{url}% Provides \path for verbatim with line breaks
 \usepackage{dirtree} % For drawing file directory trees
 \usepackage{textcomp}       % For trademark symbol
@@ -55,7 +55,6 @@
 
 \usepackage[export]{adjustbox}[2011/08/13]
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Caption %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Provides control of caption spacing in tables and figures
@@ -63,14 +62,15 @@
 % Caption spacing for longtables
 \captionsetup[longtable]{skip=1em}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Hyperref %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[colorlinks = true,
             linkcolor = blue,
             urlcolor = blue]{hyperref}
 
 %%%%%%%%%%%%%%%%%% Code listings (Listings package) %%%%%%%%%%%%%%%%%%
+
+% Provides \lstlisting for code formatting
+\usepackage{listings}
 
 \lstset{frame=tb,
   aboveskip=3mm,
@@ -87,7 +87,7 @@
   breakatwhitespace=true,
   tabsize=3
 }
-            
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Geometry package to simplify defining margins and paper
 %
